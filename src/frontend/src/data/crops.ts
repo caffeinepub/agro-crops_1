@@ -17,6 +17,7 @@ export interface Crop {
   states: string;
   fertilizer: string;
   gradient: string;
+  image?: string;
 }
 
 export const crops: Crop[] = [
@@ -32,6 +33,7 @@ export const crops: Crop[] = [
     states: "WB, UP, Punjab, AP, Tamil Nadu",
     fertilizer: "Urea + DAP, Green Manure",
     gradient: "from-yellow-900 to-yellow-700",
+    image: "/assets/generated/crop-rice.dim_400x300.jpg",
   },
   {
     id: "wheat",
@@ -45,6 +47,7 @@ export const crops: Crop[] = [
     states: "Punjab, Haryana, UP, MP, Bihar",
     fertilizer: "NPK 120:60:40, Zinc Sulfate",
     gradient: "from-amber-900 to-amber-700",
+    image: "/assets/generated/crop-wheat.dim_400x300.jpg",
   },
   {
     id: "maize",
@@ -110,6 +113,7 @@ export const crops: Crop[] = [
     states: "UP, Maharashtra, Karnataka, Tamil Nadu",
     fertilizer: "NPK 250:100:120, Compost",
     gradient: "from-green-900 to-emerald-700",
+    image: "/assets/generated/crop-sugarcane.dim_400x300.jpg",
   },
   {
     id: "cotton",

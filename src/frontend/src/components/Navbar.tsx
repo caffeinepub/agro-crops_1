@@ -45,7 +45,7 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
   const [langOpen, setLangOpen] = useState(false);
 
   return (
-    <nav className="glass-nav sticky top-0 z-50 w-full">
+    <nav className="natural-nav sticky top-0 z-50 w-full">
       <div className="flex items-center justify-between px-4 md:px-6 py-3">
         <div className="flex items-center gap-2">
           <img
@@ -63,9 +63,9 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all"
               style={{
-                background: "rgba(132,204,22,0.1)",
-                border: "1px solid rgba(132,204,22,0.3)",
-                color: "#84cc16",
+                background: "#f0ebe3",
+                border: "1px solid #d4c9b8",
+                color: "#3a6b1e",
               }}
             >
               <Globe size={14} />
@@ -75,9 +75,10 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
               <div
                 className="absolute right-0 top-full mt-1 rounded-xl overflow-hidden z-50"
                 style={{
-                  background: "rgba(10,15,10,0.95)",
-                  border: "1px solid rgba(132,204,22,0.3)",
+                  background: "#ffffff",
+                  border: "1px solid #e2d8cc",
                   minWidth: "130px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                 }}
               >
                 {langOptions.map((opt) => (
@@ -89,9 +90,11 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
                       setLang(opt.value);
                       setLangOpen(false);
                     }}
-                    className="block w-full px-4 py-2 text-left text-sm hover:bg-lime-500/10 transition-colors"
+                    className="block w-full px-4 py-2 text-left text-sm transition-colors"
                     style={{
-                      color: lang === opt.value ? "#84cc16" : "#eaf3ea",
+                      color: lang === opt.value ? "#3a6b1e" : "#2c2416",
+                      background:
+                        lang === opt.value ? "#edf3e8" : "transparent",
                     }}
                   >
                     {opt.label}
@@ -107,18 +110,18 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
             onClick={() => setIsOpen(true)}
             className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all"
             style={{
-              background: "rgba(132,204,22,0.1)",
-              border: "1px solid rgba(132,204,22,0.3)",
-              color: "#84cc16",
+              background: "#f0ebe3",
+              border: "1px solid #d4c9b8",
+              color: "#3a6b1e",
             }}
           >
             <ShoppingCart size={15} />
             {t("nav.cart")}
             {count > 0 && (
               <span
-                className="absolute -top-1.5 -right-1.5 flex items-center justify-center rounded-full text-[10px] font-bold text-black"
+                className="absolute -top-1.5 -right-1.5 flex items-center justify-center rounded-full text-[10px] font-bold text-white"
                 style={{
-                  background: "#84cc16",
+                  background: "#3a6b1e",
                   minWidth: "18px",
                   height: "18px",
                 }}
@@ -134,9 +137,9 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
             onClick={onLogout}
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm transition-all"
             style={{
-              background: "rgba(220,38,38,0.1)",
-              border: "1px solid rgba(220,38,38,0.3)",
-              color: "#f87171",
+              background: "#fef2f2",
+              border: "1px solid #fecaca",
+              color: "#dc2626",
             }}
           >
             <LogOut size={14} />
@@ -147,7 +150,7 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
         <button
           type="button"
           className="md:hidden"
-          style={{ color: "#84cc16" }}
+          style={{ color: "#3a6b1e" }}
           onClick={() => setMobileOpen(!mobileOpen)}
           data-ocid="nav.mobile_menu.button"
         >
@@ -159,8 +162,8 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
         <div
           className="flex items-center gap-1 px-2 py-1 rounded-2xl"
           style={{
-            background: "rgba(132,204,22,0.05)",
-            border: "1px solid rgba(132,204,22,0.1)",
+            background: "#f0ebe3",
+            border: "1px solid #e2d8cc",
           }}
         >
           {navItems.map((item) => (
@@ -172,14 +175,13 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
               className="px-3 py-1.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all"
               style={{
                 background:
-                  currentPage === item.key
-                    ? "rgba(132,204,22,0.2)"
-                    : "transparent",
-                color: currentPage === item.key ? "#84cc16" : "#a7b3a7",
+                  currentPage === item.key ? "#edf3e8" : "transparent",
+                color: currentPage === item.key ? "#3a6b1e" : "#6b6554",
                 border:
                   currentPage === item.key
-                    ? "1px solid rgba(132,204,22,0.4)"
+                    ? "1px solid #b5c9a0"
                     : "1px solid transparent",
+                fontWeight: currentPage === item.key ? 600 : 400,
               }}
             >
               {t(item.labelKey as Parameters<typeof t>[0])}
@@ -192,8 +194,8 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
         <div
           className="md:hidden px-4 pb-4"
           style={{
-            background: "rgba(10,15,10,0.95)",
-            borderTop: "1px solid rgba(132,204,22,0.1)",
+            background: "#ffffff",
+            borderTop: "1px solid #e2d8cc",
           }}
         >
           <div className="grid grid-cols-2 gap-2 pt-3">
@@ -208,12 +210,9 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
                 }}
                 className="px-3 py-2 rounded-xl text-sm text-left transition-all"
                 style={{
-                  background:
-                    currentPage === item.key
-                      ? "rgba(132,204,22,0.2)"
-                      : "rgba(132,204,22,0.05)",
-                  color: currentPage === item.key ? "#84cc16" : "#a7b3a7",
-                  border: "1px solid rgba(132,204,22,0.15)",
+                  background: currentPage === item.key ? "#edf3e8" : "#f9f6f1",
+                  color: currentPage === item.key ? "#3a6b1e" : "#6b6554",
+                  border: "1px solid #e2d8cc",
                 }}
               >
                 {t(item.labelKey as Parameters<typeof t>[0])}
@@ -231,12 +230,9 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
                 }}
                 className="px-3 py-1.5 rounded-full text-xs transition-all"
                 style={{
-                  background:
-                    lang === opt.value
-                      ? "rgba(132,204,22,0.2)"
-                      : "rgba(132,204,22,0.05)",
-                  color: "#84cc16",
-                  border: "1px solid rgba(132,204,22,0.3)",
+                  background: lang === opt.value ? "#edf3e8" : "#f0ebe3",
+                  color: "#3a6b1e",
+                  border: "1px solid #d4c9b8",
                 }}
               >
                 {opt.label}
@@ -247,9 +243,9 @@ export default function Navbar({ currentPage, onNavigate, onLogout }: Props) {
               onClick={() => setIsOpen(true)}
               className="ml-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs"
               style={{
-                background: "rgba(132,204,22,0.1)",
-                color: "#84cc16",
-                border: "1px solid rgba(132,204,22,0.3)",
+                background: "#f0ebe3",
+                color: "#3a6b1e",
+                border: "1px solid #d4c9b8",
               }}
             >
               <ShoppingCart size={12} /> {count > 0 ? `(${count})` : ""} Cart

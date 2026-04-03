@@ -56,12 +56,16 @@ export default function SignupPage({ onSignup }: Props) {
     onSignup();
   };
 
+  const inputStyle = {
+    background: "#ffffff",
+    border: "1px solid #e2d8cc",
+    color: "#2c2416",
+  };
+
   return (
     <div
       className="min-h-screen flex items-center justify-center p-4"
-      style={{
-        background: "linear-gradient(180deg, #070b07 0%, #0b120b 100%)",
-      }}
+      style={{ background: "#f9f6f1" }}
     >
       <div className="w-full max-w-md glass-card p-8">
         <div className="text-center mb-6">
@@ -70,7 +74,10 @@ export default function SignupPage({ onSignup }: Props) {
             alt="Agro Crops"
             className="h-12 mx-auto mb-4 object-contain"
           />
-          <h1 className="font-sora text-2xl font-bold text-white">
+          <h1
+            className="font-bold text-2xl"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
             {t("signup.title")}
           </h1>
         </div>
@@ -78,7 +85,7 @@ export default function SignupPage({ onSignup }: Props) {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             {/* biome-ignore lint/a11y/noLabelWithoutControl: input is associated via nesting */}
-            <label className="block text-sm mb-1" style={{ color: "#a7b3a7" }}>
+            <label className="block text-sm mb-1" style={{ color: "#6b6554" }}>
               {t("signup.name")}
               <input
                 data-ocid="signup.name.input"
@@ -86,18 +93,15 @@ export default function SignupPage({ onSignup }: Props) {
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 required
-                className="block w-full mt-1 px-4 py-2.5 rounded-xl text-white text-sm outline-none"
-                style={{
-                  background: "rgba(132,204,22,0.05)",
-                  border: "1px solid rgba(132,204,22,0.25)",
-                }}
+                className="block w-full mt-1 px-4 py-2.5 rounded-xl text-sm outline-none"
+                style={inputStyle}
               />
             </label>
           </div>
 
           <div>
             {/* biome-ignore lint/a11y/noLabelWithoutControl: input is associated via nesting */}
-            <label className="block text-sm mb-1" style={{ color: "#a7b3a7" }}>
+            <label className="block text-sm mb-1" style={{ color: "#6b6554" }}>
               {t("signup.mobile")}
               <div className="flex gap-2 mt-1">
                 <input
@@ -106,19 +110,16 @@ export default function SignupPage({ onSignup }: Props) {
                   value={form.mobile}
                   onChange={(e) => setForm({ ...form, mobile: e.target.value })}
                   maxLength={10}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-white text-sm outline-none"
-                  style={{
-                    background: "rgba(132,204,22,0.05)",
-                    border: "1px solid rgba(132,204,22,0.25)",
-                  }}
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm outline-none"
+                  style={inputStyle}
                 />
                 {!otpSent && (
                   <button
                     type="button"
                     data-ocid="signup.send_otp.button"
                     onClick={sendOtp}
-                    className="px-4 py-2.5 rounded-xl text-sm font-semibold text-black transition-all hover:scale-105"
-                    style={{ background: "#84cc16" }}
+                    className="px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
+                    style={{ background: "#3a6b1e" }}
                   >
                     {t("signup.sendOtp")}
                   </button>
@@ -132,7 +133,7 @@ export default function SignupPage({ onSignup }: Props) {
               {/* biome-ignore lint/a11y/noLabelWithoutControl: input is associated via nesting */}
               <label
                 className="block text-sm mb-1"
-                style={{ color: "#a7b3a7" }}
+                style={{ color: "#6b6554" }}
               >
                 {t("signup.enterOtp")} (demo: 1234)
                 <div className="flex gap-2 mt-1">
@@ -142,18 +143,15 @@ export default function SignupPage({ onSignup }: Props) {
                     value={otp}
                     onChange={(e) => setOtp(e.target.value)}
                     maxLength={4}
-                    className="flex-1 px-4 py-2.5 rounded-xl text-white text-sm outline-none"
-                    style={{
-                      background: "rgba(132,204,22,0.05)",
-                      border: "1px solid rgba(132,204,22,0.25)",
-                    }}
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm outline-none"
+                    style={inputStyle}
                   />
                   <button
                     type="button"
                     data-ocid="signup.verify_otp.button"
                     onClick={verifyOtp}
-                    className="px-4 py-2.5 rounded-xl text-sm font-semibold text-black"
-                    style={{ background: "#84cc16" }}
+                    className="px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
+                    style={{ background: "#3a6b1e" }}
                   >
                     {t("signup.verify")}
                   </button>
@@ -163,14 +161,14 @@ export default function SignupPage({ onSignup }: Props) {
           )}
 
           {otpVerified && (
-            <p className="text-sm" style={{ color: "#84cc16" }}>
-              ✅ OTP Verified
+            <p className="text-sm" style={{ color: "#3a6b1e" }}>
+              &#10003; OTP Verified
             </p>
           )}
 
           <div>
             {/* biome-ignore lint/a11y/noLabelWithoutControl: input is associated via nesting */}
-            <label className="block text-sm mb-1" style={{ color: "#a7b3a7" }}>
+            <label className="block text-sm mb-1" style={{ color: "#6b6554" }}>
               {t("signup.password")}
               <input
                 data-ocid="signup.password.input"
@@ -178,18 +176,15 @@ export default function SignupPage({ onSignup }: Props) {
                 value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
                 required
-                className="block w-full mt-1 px-4 py-2.5 rounded-xl text-white text-sm outline-none"
-                style={{
-                  background: "rgba(132,204,22,0.05)",
-                  border: "1px solid rgba(132,204,22,0.25)",
-                }}
+                className="block w-full mt-1 px-4 py-2.5 rounded-xl text-sm outline-none"
+                style={inputStyle}
               />
             </label>
           </div>
 
           <div>
             {/* biome-ignore lint/a11y/noLabelWithoutControl: input is associated via nesting */}
-            <label className="block text-sm mb-1" style={{ color: "#a7b3a7" }}>
+            <label className="block text-sm mb-1" style={{ color: "#6b6554" }}>
               {t("signup.confirmPassword")}
               <input
                 data-ocid="signup.confirm_password.input"
@@ -197,17 +192,14 @@ export default function SignupPage({ onSignup }: Props) {
                 value={form.confirm}
                 onChange={(e) => setForm({ ...form, confirm: e.target.value })}
                 required
-                className="block w-full mt-1 px-4 py-2.5 rounded-xl text-white text-sm outline-none"
-                style={{
-                  background: "rgba(132,204,22,0.05)",
-                  border: "1px solid rgba(132,204,22,0.25)",
-                }}
+                className="block w-full mt-1 px-4 py-2.5 rounded-xl text-sm outline-none"
+                style={inputStyle}
               />
             </label>
           </div>
 
           {msg && (
-            <p className="text-sm" style={{ color: "#84cc16" }}>
+            <p className="text-sm" style={{ color: "#3a6b1e" }}>
               {msg}
             </p>
           )}
@@ -215,7 +207,7 @@ export default function SignupPage({ onSignup }: Props) {
             <p
               data-ocid="signup.error_state"
               className="text-sm"
-              style={{ color: "#f87171" }}
+              style={{ color: "#dc2626" }}
             >
               {error}
             </p>
@@ -224,11 +216,8 @@ export default function SignupPage({ onSignup }: Props) {
           <button
             data-ocid="signup.submit.button"
             type="submit"
-            className="w-full py-3 rounded-xl font-semibold text-black mt-2 transition-all hover:scale-105"
-            style={{
-              background: "linear-gradient(135deg, #84cc16, #a3e635)",
-              boxShadow: "0 0 20px rgba(132,204,22,0.3)",
-            }}
+            className="w-full py-3 rounded-xl font-semibold text-white mt-2 transition-all"
+            style={{ background: "#3a6b1e" }}
           >
             {t("signup.submit")}
           </button>

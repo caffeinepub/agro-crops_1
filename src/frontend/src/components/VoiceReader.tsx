@@ -33,8 +33,8 @@ export default function VoiceReader({ text }: Props) {
       data-ocid="voice.toggle"
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all"
       style={{
-        background: speaking ? "rgba(132,204,22,0.2)" : "rgba(132,204,22,0.1)",
-        border: "1px solid rgba(132,204,22,0.4)",
+        background: speaking ? "#1f301f" : "#1a2a1a",
+        border: "1px solid #2d4a2d",
         color: "#84cc16",
       }}
       title={speaking ? "Stop" : "Read aloud"}

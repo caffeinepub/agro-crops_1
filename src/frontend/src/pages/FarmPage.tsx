@@ -1,6 +1,5 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import ParticleCanvas from "../components/ParticleCanvas";
 import VoiceReader from "../components/VoiceReader";
 import { useLang } from "../contexts/LangContext";
 import { type Crop, crops } from "../data/crops";
@@ -24,6 +23,8 @@ const calendarRows = [
   { name: "Maize", months: [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0] },
   { name: "Tomato", months: [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1] },
   { name: "Cotton", months: [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0] },
+  { name: "Mustard", months: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0] },
+  { name: "Sugarcane", months: [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1] },
 ];
 
 const calendarHeaders = [
@@ -42,6 +43,101 @@ const calendarHeaders = [
   "Dec",
 ];
 
+const soilGuide = [
+  {
+    emoji: "\uD83E\uDDEA",
+    title: "Soil Testing",
+    desc: "Test soil pH and nutrients every 6 months. Ideal pH 6–7 for most crops. Contact KVK for free testing.",
+  },
+  {
+    emoji: "\uD83C\uDF31",
+    title: "Organic Matter",
+    desc: "Add compost or vermicompost 2–4 tonnes per acre annually to improve soil structure and fertility.",
+  },
+  {
+    emoji: "\uD83D\uDCA7",
+    title: "Drainage",
+    desc: "Ensure proper field drainage. Waterlogged soil lacks oxygen, causing root rot and crop failure.",
+  },
+  {
+    emoji: "\uD83E\uDDA0",
+    title: "Microbial Life",
+    desc: "Add biofertilizers like Rhizobium and PSB (Phosphate Solubilizing Bacteria) for natural nitrogen fixation.",
+  },
+  {
+    emoji: "\uD83C\uDF3F",
+    title: "Cover Crops",
+    desc: "Grow legumes like cowpea or moong between main seasons to fix 40–60 kg nitrogen per acre naturally.",
+  },
+  {
+    emoji: "\uD83D\uDD04",
+    title: "Crop Rotation",
+    desc: "Never grow the same crop family consecutively. Rotate cereals \u2192 legumes \u2192 vegetables for optimal soil health.",
+  },
+];
+
+const irrigationMethods = [
+  {
+    emoji: "\uD83D\uDCA7",
+    title: "Drip Irrigation",
+    efficiency: "90%+",
+    cost: "\u20B930,000–60,000/acre",
+    bestFor: "Vegetables, Fruits",
+    saving: "50–70%",
+    color: "#1565c0",
+  },
+  {
+    emoji: "\uD83C\uDF0A",
+    title: "Sprinkler Irrigation",
+    efficiency: "75–85%",
+    cost: "\u20B915,000–25,000/acre",
+    bestFor: "Cereals, Oilseeds",
+    saving: "30–50%",
+    color: "#2e7d32",
+  },
+  {
+    emoji: "\uD83C\uDF3E",
+    title: "Flood / Furrow",
+    efficiency: "40–60%",
+    cost: "Low / Traditional",
+    bestFor: "Rice, Sugarcane",
+    saving: "Traditional method",
+    color: "#6a1b9a",
+  },
+  {
+    emoji: "\uD83E\uDEA3",
+    title: "Pitcher Irrigation",
+    efficiency: "95%+",
+    cost: "Very Low / DIY",
+    bestFor: "Trees, Vegetables",
+    saving: "Ancient efficient method",
+    color: "#e65100",
+  },
+];
+
+const pestMethods = [
+  {
+    emoji: "\uD83C\uDF3F",
+    title: "Neem-Based Sprays",
+    desc: "Mix 5 ml neem oil per litre water with a few drops of liquid soap. Spray every 10 days. Effective against aphids, whitefly, and mealybugs.",
+  },
+  {
+    emoji: "\uD83D\uDC1E",
+    title: "Biological Control",
+    desc: "Release ladybirds (aphid predators) and use Trichogramma cards for stem borer control. No chemicals needed.",
+  },
+  {
+    emoji: "\uD83C\uDFFA",
+    title: "Pheromone Traps",
+    desc: "Catch adult moths before egg-laying. Use 1 trap per 3–5 acres. Replace lure every 30 days for best results.",
+  },
+  {
+    emoji: "\uD83E\uDDC4",
+    title: "Garlic-Chili Spray",
+    desc: "Blend 10 garlic cloves + 5 red chilies + 1 litre water. Strain and spray. Keeps caterpillars and beetles away.",
+  },
+];
+
 export default function FarmPage() {
   const { t } = useLang();
   const [active, setActive] = useState<Category>("all");
@@ -52,16 +148,22 @@ export default function FarmPage() {
 
   return (
     <main>
-      <section className="relative min-h-[35vh] flex items-center justify-center overflow-hidden">
-        <ParticleCanvas />
-        <div className="relative z-10 text-center px-4 py-14">
+      <section
+        className="flex items-center justify-center text-center"
+        style={{
+          background: "#3a6b1e",
+          minHeight: "35vh",
+          padding: "3.5rem 1rem",
+        }}
+      >
+        <div>
           <h1
-            className="font-sora font-extrabold text-4xl md:text-5xl text-white mb-3 slide-up"
-            style={{ textShadow: "0 0 30px rgba(132,204,22,0.4)" }}
+            className="font-bold text-4xl md:text-5xl mb-3"
+            style={{ color: "#ffffff", fontFamily: "Fraunces, Georgia, serif" }}
           >
             {t("farm.hero")}
           </h1>
-          <p style={{ color: "#a7b3a7" }}>
+          <p style={{ color: "#c8e0b0" }}>
             Explore 35+ organic crops with expert growing guides
           </p>
         </div>
@@ -80,15 +182,12 @@ export default function FarmPage() {
               onClick={() => setActive(cat.key)}
               className="px-4 py-2 rounded-full text-sm font-medium transition-all"
               style={{
-                background:
-                  active === cat.key
-                    ? "rgba(132,204,22,0.2)"
-                    : "rgba(132,204,22,0.06)",
+                background: active === cat.key ? "#3a6b1e" : "#f0ebe3",
                 border:
                   active === cat.key
-                    ? "1px solid #84cc16"
-                    : "1px solid rgba(132,204,22,0.2)",
-                color: active === cat.key ? "#84cc16" : "#a7b3a7",
+                    ? "1px solid #3a6b1e"
+                    : "1px solid #e2d8cc",
+                color: active === cat.key ? "#ffffff" : "#6b6554",
               }}
             >
               {t(cat.labelKey as Parameters<typeof t>[0])}
@@ -103,31 +202,37 @@ export default function FarmPage() {
               data-ocid={`farm.crop.item.${idx + 1}`}
               className="glass-card overflow-hidden"
             >
-              <div
-                className={`w-full h-28 bg-gradient-to-br ${crop.gradient} flex items-center justify-center text-5xl`}
-              >
-                {crop.emoji}
-              </div>
+              {crop.image ? (
+                <img
+                  src={crop.image}
+                  alt={crop.name}
+                  className="w-full h-28 object-cover"
+                />
+              ) : (
+                <div
+                  className="w-full h-28 flex items-center justify-center text-5xl"
+                  style={{ background: "#edf3e8" }}
+                >
+                  {crop.emoji}
+                </div>
+              )}
               <div className="p-4">
-                <h3 className="font-sora font-bold text-lg text-white mb-2">
+                <h3
+                  className="font-bold text-lg mb-2"
+                  style={{ color: "#2c2416" }}
+                >
                   {crop.name}
                 </h3>
                 <div className="flex flex-wrap gap-2 mb-3">
                   <span
                     className="px-2 py-0.5 rounded-full text-xs"
-                    style={{
-                      background: "rgba(132,204,22,0.1)",
-                      color: "#84cc16",
-                    }}
+                    style={{ background: "#edf3e8", color: "#3a6b1e" }}
                   >
                     {crop.season}
                   </span>
                   <span
                     className="px-2 py-0.5 rounded-full text-xs"
-                    style={{
-                      background: "rgba(132,204,22,0.1)",
-                      color: "#a7b3a7",
-                    }}
+                    style={{ background: "#f0ebe3", color: "#6b6554" }}
                   >
                     {crop.duration}
                   </span>
@@ -139,7 +244,7 @@ export default function FarmPage() {
                     setExpanded(expanded === crop.id ? null : crop.id)
                   }
                   className="flex items-center gap-1 text-sm transition-colors"
-                  style={{ color: "#84cc16" }}
+                  style={{ color: "#3a6b1e" }}
                 >
                   {expanded === crop.id ? (
                     <>
@@ -151,10 +256,8 @@ export default function FarmPage() {
                     </>
                   )}
                 </button>
-
                 {expanded === crop.id && (
                   <div className="mt-3 space-y-1.5">
-                    {/* biome-ignore lint/suspicious/noArrayIndexKey: static detail rows */}
                     {[
                       { label: t("farm.soil"), value: crop.soil },
                       { label: t("farm.water"), value: crop.water },
@@ -162,8 +265,8 @@ export default function FarmPage() {
                       { label: t("farm.fertilizer"), value: crop.fertilizer },
                     ].map((row) => (
                       <div key={row.label} className="text-xs">
-                        <span style={{ color: "#84cc16" }}>{row.label}: </span>
-                        <span style={{ color: "#a7b3a7" }}>{row.value}</span>
+                        <span style={{ color: "#3a6b1e" }}>{row.label}: </span>
+                        <span style={{ color: "#6b6554" }}>{row.value}</span>
                       </div>
                     ))}
                     <div className="mt-2">
@@ -183,18 +286,21 @@ export default function FarmPage() {
         data-ocid="farm.calendar.section"
         className="py-12 px-4 max-w-7xl mx-auto"
       >
-        <h2 className="font-sora font-bold text-2xl text-white mb-6">
+        <h2
+          className="font-bold text-2xl mb-6"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
           {t("farm.calendar")}
         </h2>
         <div className="glass-card p-5 overflow-x-auto">
           <table className="w-full text-sm min-w-[600px]">
             <thead>
-              <tr style={{ borderBottom: "1px solid rgba(132,204,22,0.2)" }}>
+              <tr style={{ borderBottom: "1px solid #e2d8cc" }}>
                 {calendarHeaders.map((h) => (
                   <th
                     key={h}
                     className="py-2 px-2 text-left"
-                    style={{ color: "#84cc16" }}
+                    style={{ color: "#3a6b1e" }}
                   >
                     {h}
                   </th>
@@ -205,9 +311,12 @@ export default function FarmPage() {
               {calendarRows.map((row) => (
                 <tr
                   key={row.name}
-                  style={{ borderBottom: "1px solid rgba(132,204,22,0.1)" }}
+                  style={{ borderBottom: "1px solid #e2d8cc" }}
                 >
-                  <td className="py-2 px-2 font-medium text-white">
+                  <td
+                    className="py-2 px-2 font-medium"
+                    style={{ color: "#2c2416" }}
+                  >
                     {row.name}
                   </td>
                   {calendarHeaders.slice(1).map((monthName, mi) => (
@@ -215,7 +324,7 @@ export default function FarmPage() {
                       {row.months[mi] === 1 ? (
                         <div
                           className="w-full h-4 rounded"
-                          style={{ background: "rgba(132,204,22,0.5)" }}
+                          style={{ background: "#3a6b1e" }}
                         />
                       ) : null}
                     </td>
@@ -224,6 +333,128 @@ export default function FarmPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      {/* Soil Health Guide */}
+      <section
+        data-ocid="farm.soil_health.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-8"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            Soil Health Management
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {soilGuide.map((item, i) => (
+              <div
+                key={item.title}
+                data-ocid={`farm.soil.item.${i + 1}`}
+                className="glass-card p-5"
+              >
+                <div className="text-3xl mb-2">{item.emoji}</div>
+                <h3 className="font-semibold mb-2" style={{ color: "#2c2416" }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm" style={{ color: "#6b6554" }}>
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Irrigation Methods */}
+      <section
+        data-ocid="farm.irrigation.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+      >
+        <h2
+          className="font-bold text-2xl md:text-3xl mb-8"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
+          Irrigation Methods
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {irrigationMethods.map((method, i) => (
+            <div
+              key={method.title}
+              data-ocid={`farm.irrigation.item.${i + 1}`}
+              className="glass-card p-5"
+            >
+              <div className="text-3xl mb-2">{method.emoji}</div>
+              <h3 className="font-bold mb-3" style={{ color: method.color }}>
+                {method.title}
+              </h3>
+              <div className="space-y-1 text-xs">
+                <p>
+                  <span style={{ color: "#3a6b1e" }}>Efficiency: </span>
+                  <span className="font-semibold" style={{ color: "#2c2416" }}>
+                    {method.efficiency}
+                  </span>
+                </p>
+                <p>
+                  <span style={{ color: "#3a6b1e" }}>Cost: </span>
+                  <span style={{ color: "#6b6554" }}>{method.cost}</span>
+                </p>
+                <p>
+                  <span style={{ color: "#3a6b1e" }}>Best for: </span>
+                  <span style={{ color: "#6b6554" }}>{method.bestFor}</span>
+                </p>
+                <p>
+                  <span style={{ color: "#3a6b1e" }}>Water saving: </span>
+                  <span style={{ color: "#6b6554" }}>{method.saving}</span>
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pest Management */}
+      <section
+        data-ocid="farm.pest_management.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-8"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            Organic Pest Management
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {pestMethods.map((method, i) => (
+              <div
+                key={method.title}
+                data-ocid={`farm.pest.item.${i + 1}`}
+                className="glass-card p-5"
+              >
+                <div className="flex items-start gap-4">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+                    style={{ background: "#edf3e8" }}
+                  >
+                    {method.emoji}
+                  </div>
+                  <div>
+                    <h3 className="font-bold mb-1" style={{ color: "#2c2416" }}>
+                      {method.title}
+                    </h3>
+                    <p className="text-sm" style={{ color: "#6b6554" }}>
+                      {method.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>

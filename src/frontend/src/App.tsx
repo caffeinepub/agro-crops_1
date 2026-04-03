@@ -92,13 +92,7 @@ export default function App() {
   return (
     <LangProvider>
       <CartProvider>
-        <div
-          className="min-h-screen"
-          style={{
-            background:
-              "linear-gradient(180deg, #070b07 0%, #0b120b 50%, #0a0f0a 100%)",
-          }}
-        >
+        <div className="min-h-screen" style={{ background: "#f9f6f1" }}>
           <Navbar
             currentPage={page}
             onNavigate={setPage}

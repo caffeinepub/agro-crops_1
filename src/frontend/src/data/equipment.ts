@@ -14,6 +14,7 @@ export interface Equipment {
   specs: string;
   tutorialUrl: string;
   gradient: string;
+  image?: string;
 }
 
 export const equipmentList: Equipment[] = [
@@ -28,6 +29,7 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=tractor+farming+india",
     gradient: "from-red-900 to-orange-800",
+    image: "/assets/generated/equipment-tractor.dim_400x300.jpg",
   },
   {
     id: "powerTiller",
@@ -69,6 +71,7 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=plough+farming+india",
     gradient: "from-amber-800 to-yellow-700",
+    image: "/assets/generated/equipment-plough.dim_400x300.jpg",
   },
   {
     id: "cultivator",
@@ -137,6 +140,7 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=seed+drill+farming+india",
     gradient: "from-green-800 to-teal-700",
+    image: "/assets/generated/equipment-seed-drill.dim_400x300.jpg",
   },
   {
     id: "transplanterRice",
@@ -234,6 +238,7 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=drip+irrigation+india",
     gradient: "from-blue-800 to-cyan-700",
+    image: "/assets/generated/equipment-irrigation.dim_400x300.jpg",
   },
   {
     id: "sprinkler",

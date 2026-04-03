@@ -1,132 +1,60 @@
-import typography from "@tailwindcss/typography";
-import containerQueries from "@tailwindcss/container-queries";
-import animate from "tailwindcss-animate";
-
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["class"],
-  content: ["index.html", "src/**/*.{js,ts,jsx,tsx,html,css}"],
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      fontFamily: {
+        fraunces: ['Fraunces', 'Georgia', 'serif'],
+        figtree: ['Figtree', 'sans-serif'],
+        sora: ['Fraunces', 'Georgia', 'serif'],
+        outfit: ['Figtree', 'sans-serif'],
+      },
       colors: {
-        border: "oklch(var(--border))",
-        input: "oklch(var(--input))",
-        ring: "oklch(var(--ring) / <alpha-value>)",
-        background: "oklch(var(--background))",
-        foreground: "oklch(var(--foreground))",
+        border: 'oklch(var(--border) / <alpha-value>)',
+        input: 'oklch(var(--input) / <alpha-value>)',
+        ring: 'oklch(var(--ring) / <alpha-value>)',
+        background: 'oklch(var(--background) / <alpha-value>)',
+        foreground: 'oklch(var(--foreground) / <alpha-value>)',
         primary: {
-          DEFAULT: "oklch(var(--primary) / <alpha-value>)",
-          foreground: "oklch(var(--primary-foreground))",
+          DEFAULT: 'oklch(var(--primary) / <alpha-value>)',
+          foreground: 'oklch(var(--primary-foreground) / <alpha-value>)',
         },
         secondary: {
-          DEFAULT: "oklch(var(--secondary) / <alpha-value>)",
-          foreground: "oklch(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "oklch(var(--destructive) / <alpha-value>)",
-          foreground: "oklch(var(--destructive-foreground))",
+          DEFAULT: 'oklch(var(--secondary) / <alpha-value>)',
+          foreground: 'oklch(var(--secondary-foreground) / <alpha-value>)',
         },
         muted: {
-          DEFAULT: "oklch(var(--muted) / <alpha-value>)",
-          foreground: "oklch(var(--muted-foreground) / <alpha-value>)",
+          DEFAULT: 'oklch(var(--muted) / <alpha-value>)',
+          foreground: 'oklch(var(--muted-foreground) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: "oklch(var(--accent) / <alpha-value>)",
-          foreground: "oklch(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "oklch(var(--popover))",
-          foreground: "oklch(var(--popover-foreground))",
+          DEFAULT: 'oklch(var(--accent) / <alpha-value>)',
+          foreground: 'oklch(var(--accent-foreground) / <alpha-value>)',
         },
         card: {
-          DEFAULT: "oklch(var(--card))",
-          foreground: "oklch(var(--card-foreground))",
+          DEFAULT: 'oklch(var(--card) / <alpha-value>)',
+          foreground: 'oklch(var(--card-foreground) / <alpha-value>)',
         },
-        chart: {
-          1: "oklch(var(--chart-1))",
-          2: "oklch(var(--chart-2))",
-          3: "oklch(var(--chart-3))",
-          4: "oklch(var(--chart-4))",
-          5: "oklch(var(--chart-5))",
+        popover: {
+          DEFAULT: 'oklch(var(--popover) / <alpha-value>)',
+          foreground: 'oklch(var(--popover-foreground) / <alpha-value>)',
         },
-        sidebar: {
-          DEFAULT: "oklch(var(--sidebar))",
-          foreground: "oklch(var(--sidebar-foreground))",
-          primary: "oklch(var(--sidebar-primary))",
-          "primary-foreground": "oklch(var(--sidebar-primary-foreground))",
-          accent: "oklch(var(--sidebar-accent))",
-          "accent-foreground": "oklch(var(--sidebar-accent-foreground))",
-          border: "oklch(var(--sidebar-border))",
-          ring: "oklch(var(--sidebar-ring))",
+        destructive: {
+          DEFAULT: 'oklch(var(--destructive) / <alpha-value>)',
+          foreground: 'oklch(var(--destructive-foreground) / <alpha-value>)',
         },
-        lime: {
-          DEFAULT: "#84cc16",
-          glow: "#a3e635",
-          dark: "#3f6212",
-          50: "#f7fee7",
-          100: "#ecfccb",
-          400: "#a3e635",
-          500: "#84cc16",
-          600: "#65a30d",
-        },
-        agro: {
-          bg: "#070b07",
-          surface: "rgba(20,28,20,0.55)",
-          text: "#eaf3ea",
-          muted: "#a7b3a7",
-          border: "#2a332a",
-        },
-      },
-      fontFamily: {
-        sora: ["'Sora'", "sans-serif"],
-        outfit: ["'Outfit'", "sans-serif"],
+        'natural-green': '#3a6b1e',
+        'natural-green-dark': '#2d5217',
+        'natural-amber': '#a36b0a',
+        'natural-cream': '#f9f6f1',
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-        "2xl": "1rem",
-        "3xl": "1.25rem",
-        "4xl": "1.5rem",
-      },
-      boxShadow: {
-        xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        lime: "0 0 20px rgba(132,204,22,0.4)",
-        "lime-sm": "0 0 10px rgba(132,204,22,0.25)",
-        "lime-lg": "0 0 40px rgba(132,204,22,0.6)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "pulse-ring": {
-          "0%": { transform: "scale(0.8)", opacity: "1" },
-          "100%": { transform: "scale(2.2)", opacity: "0" },
-        },
-        "fade-in-up": {
-          from: { opacity: "0", transform: "translateY(30px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-ring": "pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite",
-        "fade-in-up": "fade-in-up 0.6s ease forwards",
+        DEFAULT: 'var(--radius)',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
     },
   },
-  plugins: [typography, containerQueries, animate],
+  plugins: [],
 };

@@ -7,6 +7,7 @@ export interface Product {
   emoji: string;
   gradient: string;
   unit: string;
+  image?: string;
 }
 
 export const products: Product[] = [
@@ -19,6 +20,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🍅",
     gradient: "from-red-900 to-red-700",
+    image: "/assets/generated/shop-product-tomatoes.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -29,6 +31,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-green-800 to-green-600",
+    image: "/assets/generated/shop-product-spinach.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -39,6 +42,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🥕",
     gradient: "from-orange-800 to-orange-600",
+    image: "/assets/generated/shop-product-carrots.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -49,6 +53,7 @@ export const products: Product[] = [
     rating: 4.2,
     emoji: "🥦",
     gradient: "from-green-700 to-lime-600",
+    image: "/assets/generated/shop-product-cabbage.dim_300x300.jpg",
     unit: "1 pc",
   },
   {
@@ -59,6 +64,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🥦",
     gradient: "from-gray-700 to-stone-500",
+    image: "/assets/generated/shop-product-cauliflower.dim_300x300.jpg",
     unit: "1 pc",
   },
   {
@@ -69,6 +75,7 @@ export const products: Product[] = [
     rating: 4.1,
     emoji: "🥒",
     gradient: "from-green-900 to-green-700",
+    image: "/assets/generated/shop-product-bitter-gourd.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -79,6 +86,7 @@ export const products: Product[] = [
     rating: 4.0,
     emoji: "🥒",
     gradient: "from-lime-800 to-green-700",
+    image: "/assets/generated/shop-product-ridge-gourd.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -89,6 +97,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🍍",
     gradient: "from-orange-700 to-amber-600",
+    image: "/assets/generated/shop-product-pumpkin.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -99,6 +108,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌱",
     gradient: "from-green-700 to-teal-600",
+    image: "/assets/generated/shop-product-peas.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -109,6 +119,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🥒",
     gradient: "from-green-600 to-emerald-500",
+    image: "/assets/generated/shop-product-cucumber.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -119,6 +130,7 @@ export const products: Product[] = [
     rating: 4.2,
     emoji: "🍆",
     gradient: "from-purple-800 to-violet-700",
+    image: "/assets/generated/shop-product-brinjal.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -129,6 +141,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌶️",
     gradient: "from-yellow-700 to-green-600",
+    image: "/assets/generated/shop-product-capsicum.dim_300x300.jpg",
     unit: "250g",
   },
   {
@@ -139,6 +152,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🥔",
     gradient: "from-amber-700 to-yellow-600",
+    image: "/assets/generated/shop-product-potato.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -149,6 +163,7 @@ export const products: Product[] = [
     rating: 4.2,
     emoji: "🧅",
     gradient: "from-purple-700 to-pink-600",
+    image: "/assets/generated/shop-product-onion.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -159,6 +174,7 @@ export const products: Product[] = [
     rating: 4.1,
     emoji: "🌱",
     gradient: "from-red-700 to-pink-600",
+    image: "/assets/generated/shop-product-radish.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -169,6 +185,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-red-900 to-purple-700",
+    image: "/assets/generated/shop-product-beetroot.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -179,6 +196,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-lime-800 to-green-700",
+    image: "/assets/generated/shop-product-okra.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -189,6 +207,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌽",
     gradient: "from-yellow-600 to-amber-500",
+    image: "/assets/generated/shop-product-corn.dim_300x300.jpg",
     unit: "2 pcs",
   },
   {
@@ -199,6 +218,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🥗",
     gradient: "from-green-600 to-lime-500",
+    image: "/assets/generated/shop-product-lettuce.dim_300x300.jpg",
     unit: "250g",
   },
   {
@@ -209,6 +229,7 @@ export const products: Product[] = [
     rating: 4.2,
     emoji: "🌱",
     gradient: "from-green-700 to-teal-600",
+    image: "/assets/generated/shop-product-celery.dim_300x300.jpg",
     unit: "250g",
   },
   // Seeds
@@ -220,6 +241,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌱",
     gradient: "from-red-900 to-orange-800",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "10g pack",
   },
   {
@@ -230,6 +252,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌱",
     gradient: "from-orange-800 to-amber-700",
+    image: "/assets/generated/shop-product-carrot-seeds.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -240,6 +263,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🌱",
     gradient: "from-green-800 to-green-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "10g pack",
   },
   {
@@ -250,6 +274,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-purple-800 to-violet-700",
+    image: "/assets/generated/shop-product-onion-seeds.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -260,6 +285,7 @@ export const products: Product[] = [
     rating: 4.2,
     emoji: "🌱",
     gradient: "from-red-700 to-pink-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "10g pack",
   },
   {
@@ -270,6 +296,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌱",
     gradient: "from-green-700 to-teal-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -280,6 +307,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌱",
     gradient: "from-red-800 to-orange-700",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -290,6 +318,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🌱",
     gradient: "from-green-800 to-lime-700",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -300,6 +329,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-orange-700 to-amber-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "10g pack",
   },
   {
@@ -310,6 +340,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌱",
     gradient: "from-green-700 to-emerald-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -320,6 +351,7 @@ export const products: Product[] = [
     rating: 4.7,
     emoji: "🌱",
     gradient: "from-yellow-700 to-orange-600",
+    image: "/assets/generated/shop-product-maize-seeds.dim_300x300.jpg",
     unit: "250g pack",
   },
   {
@@ -330,6 +362,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌱",
     gradient: "from-amber-700 to-yellow-600",
+    image: "/assets/generated/shop-product-wheat-seeds.dim_300x300.jpg",
     unit: "500g pack",
   },
   {
@@ -340,6 +373,7 @@ export const products: Product[] = [
     rating: 4.7,
     emoji: "🌱",
     gradient: "from-green-800 to-teal-700",
+    image: "/assets/generated/shop-product-rice-seeds.dim_300x300.jpg",
     unit: "500g pack",
   },
   {
@@ -350,6 +384,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌱",
     gradient: "from-yellow-600 to-lime-600",
+    image: "/assets/generated/shop-product-soybean-seeds.dim_300x300.jpg",
     unit: "250g pack",
   },
   {
@@ -360,6 +395,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🌱",
     gradient: "from-amber-600 to-yellow-500",
+    image: "/assets/generated/shop-product-groundnut-seeds.dim_300x300.jpg",
     unit: "250g pack",
   },
   {
@@ -370,6 +406,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-yellow-800 to-lime-700",
+    image: "/assets/generated/shop-product-mustard-seeds.dim_300x300.jpg",
     unit: "100g pack",
   },
   {
@@ -380,6 +417,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌱",
     gradient: "from-yellow-600 to-amber-500",
+    image: "/assets/generated/shop-product-sunflower-seeds.dim_300x300.jpg",
     unit: "100g pack",
   },
   {
@@ -390,6 +428,7 @@ export const products: Product[] = [
     rating: 4.2,
     emoji: "🌱",
     gradient: "from-green-700 to-lime-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -400,6 +439,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🌱",
     gradient: "from-green-800 to-teal-700",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   {
@@ -410,6 +450,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-stone-700 to-gray-600",
+    image: "/assets/generated/shop-product-seeds-pack.dim_300x300.jpg",
     unit: "5g pack",
   },
   // Fertilizers
@@ -421,6 +462,7 @@ export const products: Product[] = [
     rating: 4.8,
     emoji: "🌿",
     gradient: "from-amber-900 to-brown-800",
+    image: "/assets/generated/shop-product-vermicompost.dim_300x300.jpg",
     unit: "5 kg",
   },
   {
@@ -431,6 +473,7 @@ export const products: Product[] = [
     rating: 4.7,
     emoji: "🌿",
     gradient: "from-green-900 to-lime-800",
+    image: "/assets/generated/shop-product-neem-cake.dim_300x300.jpg",
     unit: "5 kg",
   },
   {
@@ -441,6 +484,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌿",
     gradient: "from-stone-700 to-gray-600",
+    image: "/assets/generated/shop-product-bone-meal.dim_300x300.jpg",
     unit: "2 kg",
   },
   {
@@ -451,6 +495,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "💫",
     gradient: "from-slate-700 to-blue-800",
+    image: "/assets/generated/shop-product-bone-meal.dim_300x300.jpg",
     unit: "5 kg",
   },
   {
@@ -461,6 +506,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🌿",
     gradient: "from-gray-700 to-slate-600",
+    image: "/assets/generated/shop-product-organic-fertilizer.dim_300x300.jpg",
     unit: "2 kg",
   },
   {
@@ -471,6 +517,7 @@ export const products: Product[] = [
     rating: 4.8,
     emoji: "🌿",
     gradient: "from-amber-800 to-yellow-700",
+    image: "/assets/generated/shop-product-organic-fertilizer.dim_300x300.jpg",
     unit: "10 kg",
   },
   {
@@ -481,6 +528,7 @@ export const products: Product[] = [
     rating: 4.7,
     emoji: "🌿",
     gradient: "from-teal-800 to-cyan-700",
+    image: "/assets/generated/shop-product-seaweed-extract.dim_300x300.jpg",
     unit: "1 L",
   },
   {
@@ -491,6 +539,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🐟",
     gradient: "from-blue-900 to-cyan-800",
+    image: "/assets/generated/shop-product-organic-fertilizer.dim_300x300.jpg",
     unit: "2 kg",
   },
   {
@@ -501,6 +550,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌿",
     gradient: "from-green-800 to-teal-700",
+    image: "/assets/generated/shop-product-green-manure.dim_300x300.jpg",
     unit: "5 kg",
   },
   {
@@ -511,6 +561,7 @@ export const products: Product[] = [
     rating: 4.7,
     emoji: "🪡",
     gradient: "from-lime-800 to-green-700",
+    image: "/assets/generated/shop-product-bio-fertilizer.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -521,6 +572,7 @@ export const products: Product[] = [
     rating: 4.8,
     emoji: "🌿",
     gradient: "from-green-700 to-lime-600",
+    image: "/assets/generated/shop-product-bio-fertilizer.dim_300x300.jpg",
     unit: "1 L",
   },
   {
@@ -531,6 +583,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌿",
     gradient: "from-amber-700 to-lime-700",
+    image: "/assets/generated/shop-product-cow-dung-manure.dim_300x300.jpg",
     unit: "500 mL",
   },
   {
@@ -541,6 +594,7 @@ export const products: Product[] = [
     rating: 4.9,
     emoji: "🐄",
     gradient: "from-amber-900 to-brown-700",
+    image: "/assets/generated/shop-product-cow-dung-manure.dim_300x300.jpg",
     unit: "10 kg",
   },
   {
@@ -551,6 +605,7 @@ export const products: Product[] = [
     rating: 4.5,
     emoji: "🌱",
     gradient: "from-blue-800 to-indigo-700",
+    image: "/assets/generated/shop-product-urea.dim_300x300.jpg",
     unit: "5 kg",
   },
   {
@@ -561,6 +616,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🪡",
     gradient: "from-teal-700 to-cyan-600",
+    image: "/assets/generated/shop-product-npk-fertilizer.dim_300x300.jpg",
     unit: "2 kg",
   },
   {
@@ -571,6 +627,7 @@ export const products: Product[] = [
     rating: 4.3,
     emoji: "🌱",
     gradient: "from-yellow-700 to-amber-600",
+    image: "/assets/generated/shop-product-organic-fertilizer.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -581,6 +638,7 @@ export const products: Product[] = [
     rating: 4.4,
     emoji: "🌱",
     gradient: "from-slate-600 to-gray-500",
+    image: "/assets/generated/shop-product-organic-fertilizer.dim_300x300.jpg",
     unit: "1 kg",
   },
   {
@@ -591,6 +649,7 @@ export const products: Product[] = [
     rating: 4.6,
     emoji: "🌱",
     gradient: "from-indigo-800 to-purple-700",
+    image: "/assets/generated/shop-product-bio-fertilizer.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -601,6 +660,7 @@ export const products: Product[] = [
     rating: 4.7,
     emoji: "🪡",
     gradient: "from-green-700 to-emerald-600",
+    image: "/assets/generated/shop-product-bio-fertilizer.dim_300x300.jpg",
     unit: "500g",
   },
   {
@@ -611,6 +671,7 @@ export const products: Product[] = [
     rating: 4.8,
     emoji: "🪡",
     gradient: "from-teal-800 to-green-700",
+    image: "/assets/generated/shop-product-bio-fertilizer.dim_300x300.jpg",
     unit: "250g",
   },
 ];

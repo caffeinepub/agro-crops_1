@@ -15,6 +15,7 @@ export interface Animal {
   health: string;
   benefits: string;
   gradient: string;
+  image?: string;
 }
 
 export const animals: Animal[] = [
@@ -30,6 +31,7 @@ export const animals: Animal[] = [
     benefits:
       "15-20L milk/day. A2 milk variety. High fat content. Heat tolerant.",
     gradient: "from-amber-800 to-yellow-700",
+    image: "/assets/generated/cattle-cow.dim_400x300.jpg",
   },
   {
     id: "cow-sahiwal",
@@ -41,6 +43,7 @@ export const animals: Animal[] = [
     health: "Regular vaccination, deworming every 3 months. Tick control.",
     benefits: "10-15L milk/day. Disease resistant. Good for hot climate.",
     gradient: "from-red-800 to-amber-700",
+    image: "/assets/generated/cattle-cow.dim_400x300.jpg",
   },
   {
     id: "cow-hf",
@@ -54,6 +57,7 @@ export const animals: Animal[] = [
     benefits:
       "25-35L milk/day. High production. Suitable for commercial farming.",
     gradient: "from-black to-gray-700",
+    image: "/assets/generated/cattle-cow.dim_400x300.jpg",
   },
   {
     id: "buffalo",
@@ -65,6 +69,7 @@ export const animals: Animal[] = [
     health: "FMD vaccination. Regular deworming. Wallow facility essential.",
     benefits: "10-15L milk/day. High fat (7-8%). Good for ghee production.",
     gradient: "from-slate-800 to-gray-700",
+    image: "/assets/generated/cattle-buffalo.dim_400x300.jpg",
   },
   {
     id: "goat-sirohi",
@@ -76,6 +81,7 @@ export const animals: Animal[] = [
     health: "PPR vaccination. Deworming quarterly. Foot bath monthly.",
     benefits: "1.5-2L milk/day. Meat production. Hardy breed, low maintenance.",
     gradient: "from-stone-700 to-amber-600",
+    image: "/assets/generated/cattle-goat.dim_400x300.jpg",
   },
   {
     id: "goat-barbari",
@@ -87,6 +93,7 @@ export const animals: Animal[] = [
     health: "Regular vaccination, deworming. Clean housing essential.",
     benefits: "Good milk and meat production. Prolific breeder. Popular in UP.",
     gradient: "from-amber-700 to-stone-600",
+    image: "/assets/generated/cattle-goat.dim_400x300.jpg",
   },
   {
     id: "sheep-merino",
@@ -98,6 +105,7 @@ export const animals: Animal[] = [
     health: "Shearing twice yearly. Foot rot prevention. Drenching quarterly.",
     benefits: "Fine quality wool. Good meat. Adaptable to various climates.",
     gradient: "from-stone-600 to-gray-500",
+    image: "/assets/generated/cattle-sheep.dim_400x300.jpg",
   },
   {
     id: "sheep-deccani",
@@ -109,6 +117,7 @@ export const animals: Animal[] = [
     health: "Regular deworming. PPR vaccine. Hoof trimming every 6 weeks.",
     benefits: "Meat and coarse wool. Drought tolerant. Low management cost.",
     gradient: "from-amber-800 to-stone-700",
+    image: "/assets/generated/cattle-sheep.dim_400x300.jpg",
   },
   {
     id: "hen-broiler",
@@ -122,6 +131,7 @@ export const animals: Animal[] = [
     benefits:
       "Ready in 6 weeks. 2-2.5kg weight gain. High feed conversion ratio.",
     gradient: "from-yellow-700 to-orange-600",
+    image: "/assets/generated/cattle-poultry.dim_400x300.jpg",
   },
   {
     id: "hen-layer",
@@ -135,6 +145,7 @@ export const animals: Animal[] = [
     benefits:
       "250-300 eggs/year. Economic layer. 72-74 weeks production cycle.",
     gradient: "from-amber-600 to-yellow-500",
+    image: "/assets/generated/cattle-poultry.dim_400x300.jpg",
   },
   {
     id: "duck",
@@ -148,6 +159,7 @@ export const animals: Animal[] = [
     benefits:
       "200+ eggs/year. Hardy birds. Good meat quality. Low disease incidence.",
     gradient: "from-teal-700 to-cyan-600",
+    image: "/assets/generated/cattle-poultry.dim_400x300.jpg",
   },
   {
     id: "pig",

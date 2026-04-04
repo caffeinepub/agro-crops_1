@@ -112,7 +112,7 @@ export default function CheckoutModal({ open, onClose }: Props) {
     const productPlain = items
       .map(
         (i, idx) =>
-          `${idx + 1}. ${i.name} | Qty: ${i.qty} | Unit: \u20B9${i.price} | Total: \u20B9${i.price * i.qty}`,
+          `${idx + 1}. ${i.name} | Qty: ${i.qty} | Unit: ₹${i.price} | Total: ₹${i.price * i.qty}`,
       )
       .join("\n");
 
@@ -125,7 +125,7 @@ export default function CheckoutModal({ open, onClose }: Props) {
       product_name: productTable, // HTML table — use {{{product_name}}} in EmailJS template
       product_list: productPlain, // Plain-text fallback
       quantity: String(quantity),
-      total_price: `\u20B9${total.toLocaleString("en-IN")}`,
+      total_price: `₹${total.toLocaleString("en-IN")}`,
       order_time: orderTime,
     };
 

@@ -86,7 +86,7 @@ export default function CartPanel({ onCheckout }: Props) {
                     {item.name}
                   </p>
                   <p className="text-xs" style={{ color: "#6b6554" }}>
-                    \u20B9{item.price} each
+                    ₹{item.price} each
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5">
@@ -119,7 +119,7 @@ export default function CartPanel({ onCheckout }: Props) {
                   className="text-sm font-semibold"
                   style={{ color: "#3a6b1e" }}
                 >
-                  \u20B9{item.price * item.qty}
+                  ₹{item.price * item.qty}
                 </p>
                 <button
                   type="button"
@@ -141,7 +141,7 @@ export default function CartPanel({ onCheckout }: Props) {
                 {t("cart.total")}
               </span>
               <span className="text-xl font-bold" style={{ color: "#3a6b1e" }}>
-                \u20B9{total}
+                ₹{total}
               </span>
             </div>
             <button

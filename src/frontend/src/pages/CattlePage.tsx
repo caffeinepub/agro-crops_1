@@ -96,29 +96,29 @@ const profitability = [
   {
     emoji: "\uD83D\uDC04",
     animal: "Dairy Cow",
-    investment: "\u20B960,000–80,000",
-    monthlyIncome: "\u20B98,000–15,000",
+    investment: "₹60,000–80,000",
+    monthlyIncome: "₹8,000–15,000",
     payback: "6–8 months",
   },
   {
     emoji: "\uD83D\uDC10",
     animal: "Goat Farming",
-    investment: "\u20B915,000–20,000 per pair",
-    monthlyIncome: "\u20B95,000–8,000",
+    investment: "₹15,000–20,000 per pair",
+    monthlyIncome: "₹5,000–8,000",
     payback: "4–6 months",
   },
   {
     emoji: "\uD83D\uDC14",
     animal: "Poultry (100 birds)",
-    investment: "\u20B925,000–35,000",
-    monthlyIncome: "\u20B98,000–12,000",
+    investment: "₹25,000–35,000",
+    monthlyIncome: "₹8,000–12,000",
     payback: "3–4 months",
   },
   {
     emoji: "\uD83D\uDC11",
     animal: "Sheep Farming",
-    investment: "\u20B912,000–18,000 per pair",
-    monthlyIncome: "\u20B93,000–5,000",
+    investment: "₹12,000–18,000 per pair",
+    monthlyIncome: "₹3,000–5,000",
     payback: "5–7 months",
   },
 ];
@@ -306,7 +306,7 @@ export default function CattlePage() {
             {
               emoji: "\uD83C\uDF3F",
               title: "Manure",
-              desc: "Natural fertilizer worth \u20B95,000–10,000/year per animal.",
+              desc: "Natural fertilizer worth ₹5,000–10,000/year per animal.",
             },
           ].map((b) => (
             <div key={b.title} className="glass-card p-4 text-center">

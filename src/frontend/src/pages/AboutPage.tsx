@@ -133,7 +133,7 @@ const timeline = [
   {
     year: "2023",
     title: "National Expansion",
-    desc: "Expanded to 25+ states with 2,500+ farmers empowered and \u20B91.2 crore in subsidies facilitated.",
+    desc: "Expanded to 25+ states with 2,500+ farmers empowered and ₹1.2 crore in subsidies facilitated.",
     emoji: "\uD83C\uDDEE\uD83C\uDDF3",
   },
 ];

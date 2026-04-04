@@ -78,7 +78,7 @@ const futureCards = [
 const schemeHighlights = [
   {
     name: "PM-KISAN",
-    desc: "\u20B96000/year direct income support",
+    desc: "₹6000/year direct income support",
     emoji: "\uD83C\uDFE6",
   },
   {
@@ -107,7 +107,7 @@ const testimonials = [
     location: "Nashik, Maharashtra",
     role: "Organic Grower",
     quote:
-      "The government scheme information on this platform helped me get \u20B96000 under PM-KISAN. I also learned proper irrigation techniques that saved 40% water usage.",
+      "The government scheme information on this platform helped me get ₹6000 under PM-KISAN. I also learned proper irrigation techniques that saved 40% water usage.",
     photo: "/assets/generated/farmer-testimonial-2.dim_300x300.jpg",
   },
   {
@@ -159,7 +159,7 @@ const impactStats = [
   },
   { value: "35+", label: "Organic Crops Documented", emoji: "\uD83C\uDF31" },
   {
-    value: "\u20B91.2 Cr",
+    value: "₹1.2 Cr",
     label: "Subsidy Claims Facilitated",
     emoji: "\uD83C\uDFE6",
   },

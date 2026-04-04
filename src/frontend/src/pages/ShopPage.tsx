@@ -182,7 +182,7 @@ export default function ShopPage() {
                   className="text-xl font-bold mt-2 mb-3"
                   style={{ color: "#3a6b1e" }}
                 >
-                  \u20B9{p.price}
+                  ₹{p.price}
                 </p>
                 <div className="flex flex-col gap-2 mt-auto">
                   <button

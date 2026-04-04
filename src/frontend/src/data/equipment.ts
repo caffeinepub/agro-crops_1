@@ -22,7 +22,7 @@ export const equipmentList: Equipment[] = [
     id: "tractor",
     name: "Tractor",
     category: "tillage",
-    emoji: "🚜",
+    emoji: "\u{1F69C}",
     description: "Multi-purpose farm power unit for various field operations",
     uses: ["Ploughing", "Harrowing", "Transport", "Operating PTO implements"],
     specs: "25-75 HP, 2WD/4WD, Diesel engine",
@@ -35,31 +35,33 @@ export const equipmentList: Equipment[] = [
     id: "powerTiller",
     name: "Power Tiller",
     category: "tillage",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Walk-behind tractor for small farms and paddy fields",
     uses: ["Puddling", "Tillage", "Weeding", "Pumping water"],
     specs: "8-12 HP, 2-wheel drive, Multi-purpose",
     tutorialUrl:
       "https://www.youtube.com/results?search_query=power+tiller+india",
     gradient: "from-orange-800 to-amber-700",
+    image: "/assets/generated/equipment-power-tiller.dim_400x300.jpg",
   },
   {
     id: "rotavator",
     name: "Rotavator",
     category: "tillage",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Rotary tillage machine for seedbed preparation",
     uses: ["Tillage", "Weed control", "Residue incorporation", "Seedbed prep"],
     specs: "Tractor-mounted, 1.5-3.0m width, L-blade",
     tutorialUrl:
       "https://www.youtube.com/results?search_query=rotavator+farming",
     gradient: "from-slate-700 to-gray-600",
+    image: "/assets/generated/equipment-rotavator.dim_400x300.jpg",
   },
   {
     id: "plough",
     name: "Plough",
     category: "tillage",
-    emoji: "🌿",
+    emoji: "\u{1F33F}",
     description: "Primary tillage implement for soil turning and inversion",
     uses: [
       "Deep tillage",
@@ -77,7 +79,7 @@ export const equipmentList: Equipment[] = [
     id: "cultivator",
     name: "Cultivator",
     category: "tillage",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Secondary tillage for soil loosening and weed control",
     uses: [
       "Secondary tillage",
@@ -89,12 +91,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=cultivator+farming",
     gradient: "from-stone-700 to-amber-600",
+    image: "/assets/generated/equipment-cultivator.dim_400x300.jpg",
   },
   {
     id: "discHarrow",
     name: "Disc Harrow",
     category: "tillage",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Cutting and pulverizing crop residues and hard soil",
     uses: [
       "Residue cutting",
@@ -106,12 +109,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=disc+harrow+farming",
     gradient: "from-gray-700 to-slate-600",
+    image: "/assets/generated/equipment-disc-harrow.dim_400x300.jpg",
   },
   {
     id: "subsoiler",
     name: "Subsoiler",
     category: "tillage",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Deep tillage to break hardpan and improve drainage",
     uses: [
       "Breaking hardpan",
@@ -123,12 +127,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=subsoiler+farming",
     gradient: "from-zinc-700 to-gray-600",
+    image: "/assets/generated/equipment-subsoiler.dim_400x300.jpg",
   },
   {
     id: "seedDrill",
     name: "Seed Drill",
     category: "seeding",
-    emoji: "🌱",
+    emoji: "\u{1F331}",
     description: "Precision seeding machine for uniform seed placement",
     uses: [
       "Cereals sowing",
@@ -146,7 +151,7 @@ export const equipmentList: Equipment[] = [
     id: "transplanterRice",
     name: "Rice Transplanter",
     category: "seeding",
-    emoji: "🌾",
+    emoji: "\u{1F33E}",
     description: "Mechanized transplanting of paddy seedlings",
     uses: [
       "Paddy transplanting",
@@ -158,12 +163,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=rice+transplanter+india",
     gradient: "from-lime-800 to-green-700",
+    image: "/assets/generated/equipment-transplanter.dim_400x300.jpg",
   },
   {
     id: "fertilizerSpreader",
     name: "Fertilizer Spreader",
     category: "seeding",
-    emoji: "🌿",
+    emoji: "\u{1F33F}",
     description: "Uniform distribution of granular fertilizers",
     uses: [
       "Basal fertilizer application",
@@ -175,12 +181,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=fertilizer+spreader+india",
     gradient: "from-amber-700 to-lime-700",
+    image: "/assets/generated/equipment-fertilizer-spreader.dim_400x300.jpg",
   },
   {
     id: "combineHarvester",
     name: "Combine Harvester",
     category: "harvesting",
-    emoji: "🌾",
+    emoji: "\u{1F33E}",
     description: "All-in-one harvesting, threshing, and winnowing",
     uses: [
       "Wheat harvesting",
@@ -192,24 +199,26 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=combine+harvester+india",
     gradient: "from-yellow-800 to-amber-700",
+    image: "/assets/generated/equipment-combine-harvester.dim_400x300.jpg",
   },
   {
     id: "reaper",
     name: "Reaper",
     category: "harvesting",
-    emoji: "🌾",
+    emoji: "\u{1F33E}",
     description: "Cutting standing crops for subsequent processing",
     uses: ["Crop cutting", "Windrow laying", "Pre-harvest", "Reducing labor"],
     specs: "Self-propelled/Tractor-mounted, 4-6 row",
     tutorialUrl:
       "https://www.youtube.com/results?search_query=crop+reaper+india",
     gradient: "from-orange-700 to-yellow-600",
+    image: "/assets/generated/equipment-reaper.dim_400x300.jpg",
   },
   {
     id: "thresher",
     name: "Thresher",
     category: "harvesting",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Separating grain from harvested crop stalks",
     uses: [
       "Grain separation",
@@ -221,12 +230,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=thresher+machine+india",
     gradient: "from-stone-700 to-amber-600",
+    image: "/assets/generated/equipment-thresher.dim_400x300.jpg",
   },
   {
     id: "drip",
     name: "Drip Irrigation Kit",
     category: "irrigation",
-    emoji: "💧",
+    emoji: "\u{1F4A7}",
     description: "Water-efficient drip system for targeted plant watering",
     uses: [
       "Water saving",
@@ -244,19 +254,20 @@ export const equipmentList: Equipment[] = [
     id: "sprinkler",
     name: "Sprinkler System",
     category: "irrigation",
-    emoji: "💧",
+    emoji: "\u{1F4A7}",
     description: "Overhead irrigation mimicking natural rainfall",
     uses: ["Field crops", "Lawns", "Frost protection", "Field wetting"],
     specs: "15-20m radius, 6-8 bar pressure, Aluminum pipes",
     tutorialUrl:
       "https://www.youtube.com/results?search_query=sprinkler+irrigation+india",
     gradient: "from-teal-800 to-blue-700",
+    image: "/assets/generated/equipment-sprinkler.dim_400x300.jpg",
   },
   {
     id: "solarPump",
     name: "Solar Water Pump",
     category: "irrigation",
-    emoji: "☀️",
+    emoji: "\u{2600}\uFE0F",
     description: "Solar-powered pumping for off-grid water supply",
     uses: [
       "Groundwater pumping",
@@ -268,12 +279,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=solar+pump+farming+india",
     gradient: "from-yellow-700 to-orange-600",
+    image: "/assets/generated/equipment-solar-pump.dim_400x300.jpg",
   },
   {
     id: "knapsack",
     name: "Knapsack Sprayer",
     category: "protection",
-    emoji: "💧",
+    emoji: "\u{1F4A7}",
     description: "Manual backpack sprayer for small farms",
     uses: [
       "Pesticide spray",
@@ -285,12 +297,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=knapsack+sprayer+farming",
     gradient: "from-green-700 to-teal-600",
+    image: "/assets/generated/equipment-knapsack-sprayer.dim_400x300.jpg",
   },
   {
     id: "powerSprayer",
     name: "Power Sprayer",
     category: "protection",
-    emoji: "💧",
+    emoji: "\u{1F4A7}",
     description: "Engine-powered high-volume crop protection sprayer",
     uses: [
       "Large area spraying",
@@ -302,12 +315,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=power+sprayer+farming+india",
     gradient: "from-cyan-800 to-blue-700",
+    image: "/assets/generated/equipment-power-sprayer.dim_400x300.jpg",
   },
   {
     id: "droneSprayer",
     name: "Drone Sprayer",
     category: "protection",
-    emoji: "🫸",
+    emoji: "\u{1FAF8}",
     description: "UAV-based precision pesticide and nutrient spraying",
     uses: [
       "Precision spraying",
@@ -319,12 +333,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=drone+spraying+farming+india",
     gradient: "from-slate-800 to-blue-900",
+    image: "/assets/generated/equipment-drone-sprayer.dim_400x300.jpg",
   },
   {
     id: "powerWeeder",
     name: "Power Weeder",
     category: "processing",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Mechanized inter-row weed removal between crops",
     uses: [
       "Weed control",
@@ -336,12 +351,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=power+weeder+farming+india",
     gradient: "from-lime-800 to-green-700",
+    image: "/assets/generated/equipment-power-weeder.dim_400x300.jpg",
   },
   {
     id: "chaffCutter",
     name: "Chaff Cutter",
     category: "processing",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Cutting and chopping straw and fodder for livestock",
     uses: [
       "Fodder chopping",
@@ -353,12 +369,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=chaff+cutter+machine+india",
     gradient: "from-amber-700 to-yellow-600",
+    image: "/assets/generated/equipment-chaff-cutter.dim_400x300.jpg",
   },
   {
     id: "grainCleaner",
     name: "Grain Cleaner",
     category: "processing",
-    emoji: "🔧",
+    emoji: "\u{1F527}",
     description: "Winnowing and cleaning harvested grain from impurities",
     uses: [
       "Grain cleaning",
@@ -370,12 +387,13 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=grain+cleaner+winnower+india",
     gradient: "from-yellow-700 to-amber-600",
+    image: "/assets/generated/equipment-grain-cleaner.dim_400x300.jpg",
   },
   {
     id: "fertigation",
     name: "Fertigation System",
     category: "seeding",
-    emoji: "🌱",
+    emoji: "\u{1F331}",
     description: "Precision delivery of nutrients through irrigation water",
     uses: [
       "Nutrient delivery",
@@ -387,5 +405,6 @@ export const equipmentList: Equipment[] = [
     tutorialUrl:
       "https://www.youtube.com/results?search_query=fertigation+system+india",
     gradient: "from-teal-700 to-cyan-600",
+    image: "/assets/generated/equipment-fertigation.dim_400x300.jpg",
   },
 ];

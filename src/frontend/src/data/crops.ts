@@ -61,6 +61,7 @@ export const crops: Crop[] = [
     states: "Karnataka, MP, Rajasthan, AP",
     fertilizer: "Urea, Phosphate fertilizers",
     gradient: "from-yellow-800 to-orange-700",
+    image: "/assets/generated/crop-maize.dim_400x300.jpg",
   },
   {
     id: "barley",
@@ -74,6 +75,7 @@ export const crops: Crop[] = [
     states: "UP, Rajasthan, Haryana, MP",
     fertilizer: "DAP + Urea, Potash",
     gradient: "from-amber-800 to-yellow-600",
+    image: "/assets/generated/crop-barley.dim_400x300.jpg",
   },
   {
     id: "sorghum",
@@ -87,6 +89,7 @@ export const crops: Crop[] = [
     states: "Maharashtra, Karnataka, AP, MP",
     fertilizer: "Organic compost, Urea",
     gradient: "from-orange-900 to-red-800",
+    image: "/assets/generated/crop-sorghum.dim_400x300.jpg",
   },
   {
     id: "millet",
@@ -100,6 +103,7 @@ export const crops: Crop[] = [
     states: "Rajasthan, Gujarat, Haryana, UP",
     fertilizer: "FYM + Urea, Micronutrients",
     gradient: "from-yellow-700 to-lime-700",
+    image: "/assets/generated/crop-millet.dim_400x300.jpg",
   },
   {
     id: "sugarcane",
@@ -127,6 +131,7 @@ export const crops: Crop[] = [
     states: "Gujarat, Maharashtra, AP, Haryana",
     fertilizer: "NPK 100:50:50, FYM",
     gradient: "from-stone-700 to-gray-600",
+    image: "/assets/generated/crop-cotton.dim_400x300.jpg",
   },
   {
     id: "jute",
@@ -140,6 +145,7 @@ export const crops: Crop[] = [
     states: "WB, Bihar, Assam, Odisha",
     fertilizer: "Urea, Potash, Compost",
     gradient: "from-green-800 to-teal-700",
+    image: "/assets/generated/crop-jute.dim_400x300.jpg",
   },
   {
     id: "tomato",
@@ -153,6 +159,7 @@ export const crops: Crop[] = [
     states: "Karnataka, AP, MP, Odisha",
     fertilizer: "NPK 120:60:60, Calcium Nitrate",
     gradient: "from-red-900 to-red-700",
+    image: "/assets/generated/crop-tomato.dim_400x300.jpg",
   },
   {
     id: "potato",
@@ -166,6 +173,7 @@ export const crops: Crop[] = [
     states: "UP, WB, Bihar, Punjab",
     fertilizer: "NPK 120:100:150, FYM",
     gradient: "from-amber-700 to-yellow-600",
+    image: "/assets/generated/crop-potato.dim_400x300.jpg",
   },
   {
     id: "onion",
@@ -179,6 +187,7 @@ export const crops: Crop[] = [
     states: "Maharashtra, Karnataka, MP, Gujarat",
     fertilizer: "NPK 100:50:80, Boron",
     gradient: "from-purple-900 to-violet-700",
+    image: "/assets/generated/crop-onion.dim_400x300.jpg",
   },
   {
     id: "brinjal",
@@ -192,6 +201,7 @@ export const crops: Crop[] = [
     states: "WB, Odisha, Karnataka, UP",
     fertilizer: "NPK 100:50:50, Compost",
     gradient: "from-purple-800 to-indigo-700",
+    image: "/assets/generated/crop-brinjal.dim_400x300.jpg",
   },
   {
     id: "capsicum",
@@ -205,6 +215,7 @@ export const crops: Crop[] = [
     states: "Karnataka, HP, Maharashtra, UP",
     fertilizer: "NPK 120:60:80, Calcium",
     gradient: "from-green-700 to-lime-600",
+    image: "/assets/generated/crop-capsicum.dim_400x300.jpg",
   },
   {
     id: "cauliflower",
@@ -218,6 +229,7 @@ export const crops: Crop[] = [
     states: "UP, Bihar, Odisha, WB",
     fertilizer: "NPK 100:50:50, Boron",
     gradient: "from-stone-600 to-gray-500",
+    image: "/assets/generated/crop-cauliflower.dim_400x300.jpg",
   },
   {
     id: "cabbage",
@@ -231,6 +243,7 @@ export const crops: Crop[] = [
     states: "UP, WB, Odisha, Assam",
     fertilizer: "NPK 120:60:60, Compost",
     gradient: "from-green-800 to-green-600",
+    image: "/assets/generated/crop-cabbage.dim_400x300.jpg",
   },
   {
     id: "spinach",
@@ -244,6 +257,7 @@ export const crops: Crop[] = [
     states: "Punjab, UP, Haryana, Bihar",
     fertilizer: "Urea + Compost, Iron",
     gradient: "from-green-700 to-emerald-600",
+    image: "/assets/generated/crop-spinach.dim_400x300.jpg",
   },
   {
     id: "mango",
@@ -257,6 +271,7 @@ export const crops: Crop[] = [
     states: "UP, AP, Karnataka, Bihar",
     fertilizer: "NPK 1000g/tree, FYM",
     gradient: "from-orange-800 to-yellow-700",
+    image: "/assets/generated/crop-mango.dim_400x300.jpg",
   },
   {
     id: "banana",
@@ -270,6 +285,7 @@ export const crops: Crop[] = [
     states: "Tamil Nadu, Maharashtra, Gujarat, AP",
     fertilizer: "NPK 200:60:300, Compost",
     gradient: "from-yellow-600 to-lime-600",
+    image: "/assets/generated/crop-banana.dim_400x300.jpg",
   },
   {
     id: "papaya",
@@ -283,6 +299,7 @@ export const crops: Crop[] = [
     states: "Gujarat, AP, Karnataka, WB",
     fertilizer: "NPK 200:200:200, FYM",
     gradient: "from-orange-700 to-amber-600",
+    image: "/assets/generated/crop-papaya.dim_400x300.jpg",
   },
   {
     id: "guava",
@@ -296,6 +313,7 @@ export const crops: Crop[] = [
     states: "UP, MP, Karnataka, Bihar",
     fertilizer: "NPK 600:300:600g, FYM",
     gradient: "from-lime-700 to-green-600",
+    image: "/assets/generated/crop-guava.dim_400x300.jpg",
   },
   {
     id: "litchi",
@@ -309,6 +327,7 @@ export const crops: Crop[] = [
     states: "Bihar, WB, UP, Uttarakhand",
     fertilizer: "NPK 500:250:500, FYM",
     gradient: "from-red-700 to-pink-600",
+    image: "/assets/generated/crop-litchi.dim_400x300.jpg",
   },
   {
     id: "turmeric",
@@ -322,6 +341,7 @@ export const crops: Crop[] = [
     states: "AP, Odisha, WB, Tamil Nadu",
     fertilizer: "NPK 60:50:120, FYM",
     gradient: "from-yellow-700 to-orange-600",
+    image: "/assets/generated/crop-turmeric.dim_400x300.jpg",
   },
   {
     id: "ginger",
@@ -335,6 +355,7 @@ export const crops: Crop[] = [
     states: "Kerala, Karnataka, NE India, Odisha",
     fertilizer: "NPK 75:50:75, Organic compost",
     gradient: "from-amber-600 to-yellow-500",
+    image: "/assets/generated/crop-ginger.dim_400x300.jpg",
   },
   {
     id: "chilli",
@@ -348,6 +369,7 @@ export const crops: Crop[] = [
     states: "AP, Maharashtra, Karnataka, MP",
     fertilizer: "NPK 120:60:80, Calcium Boron",
     gradient: "from-red-800 to-orange-700",
+    image: "/assets/generated/crop-chilli.dim_400x300.jpg",
   },
   {
     id: "cardamom",
@@ -361,6 +383,7 @@ export const crops: Crop[] = [
     states: "Kerala, Karnataka, Tamil Nadu",
     fertilizer: "NPK 30:30:90g, FYM",
     gradient: "from-green-900 to-teal-800",
+    image: "/assets/generated/crop-cardamom.dim_400x300.jpg",
   },
   {
     id: "clove",
@@ -374,6 +397,7 @@ export const crops: Crop[] = [
     states: "Kerala, Tamil Nadu, Karnataka",
     fertilizer: "NPK 50:50:200g, Compost",
     gradient: "from-rose-900 to-red-800",
+    image: "/assets/generated/crop-clove.dim_400x300.jpg",
   },
   {
     id: "chickpea",
@@ -387,6 +411,7 @@ export const crops: Crop[] = [
     states: "MP, Rajasthan, UP, Maharashtra",
     fertilizer: "DAP + Rhizobium, Sulphur",
     gradient: "from-amber-800 to-yellow-700",
+    image: "/assets/generated/crop-chickpea.dim_400x300.jpg",
   },
   {
     id: "lentil",
@@ -400,6 +425,7 @@ export const crops: Crop[] = [
     states: "MP, UP, Bihar, WB, Rajasthan",
     fertilizer: "DAP + Rhizobium, Zinc",
     gradient: "from-orange-700 to-amber-600",
+    image: "/assets/generated/crop-lentil.dim_400x300.jpg",
   },
   {
     id: "greenGram",
@@ -413,6 +439,7 @@ export const crops: Crop[] = [
     states: "Rajasthan, Maharashtra, AP, Karnataka",
     fertilizer: "DAP + Rhizobium",
     gradient: "from-green-700 to-lime-600",
+    image: "/assets/generated/crop-green-gram.dim_400x300.jpg",
   },
   {
     id: "blackGram",
@@ -426,6 +453,7 @@ export const crops: Crop[] = [
     states: "UP, MP, AP, Tamil Nadu",
     fertilizer: "DAP + Rhizobium, Potash",
     gradient: "from-gray-800 to-slate-700",
+    image: "/assets/generated/crop-black-gram.dim_400x300.jpg",
   },
   {
     id: "soybean",
@@ -439,6 +467,7 @@ export const crops: Crop[] = [
     states: "MP, Maharashtra, Rajasthan, Karnataka",
     fertilizer: "DAP + Rhizobium, Sulphur",
     gradient: "from-yellow-700 to-green-700",
+    image: "/assets/generated/crop-soybean.dim_400x300.jpg",
   },
   {
     id: "groundnut",
@@ -452,6 +481,7 @@ export const crops: Crop[] = [
     states: "Gujarat, AP, Rajasthan, Tamil Nadu",
     fertilizer: "Gypsum + Rhizobium, Boron",
     gradient: "from-amber-700 to-yellow-600",
+    image: "/assets/generated/crop-groundnut.dim_400x300.jpg",
   },
   {
     id: "mustard",
@@ -465,6 +495,7 @@ export const crops: Crop[] = [
     states: "Rajasthan, UP, Haryana, MP",
     fertilizer: "NPK 80:40:40, Sulphur",
     gradient: "from-yellow-600 to-lime-600",
+    image: "/assets/generated/crop-mustard.dim_400x300.jpg",
   },
   {
     id: "sunflower",
@@ -478,6 +509,7 @@ export const crops: Crop[] = [
     states: "Karnataka, AP, Maharashtra, Odisha",
     fertilizer: "NPK 90:60:30, Boron",
     gradient: "from-yellow-500 to-amber-500",
+    image: "/assets/generated/crop-sunflower.dim_400x300.jpg",
   },
   {
     id: "sesame",
@@ -491,6 +523,7 @@ export const crops: Crop[] = [
     states: "UP, Rajasthan, WB, Gujarat",
     fertilizer: "NPK 30:15:15, FYM",
     gradient: "from-stone-600 to-amber-500",
+    image: "/assets/generated/crop-sesame.dim_400x300.jpg",
   },
   {
     id: "amla",
@@ -504,6 +537,7 @@ export const crops: Crop[] = [
     states: "UP, Himachal, Gujarat, Rajasthan",
     fertilizer: "FYM + NPK 100:50:100",
     gradient: "from-green-700 to-teal-700",
+    image: "/assets/generated/crop-amla.dim_400x300.jpg",
   },
   {
     id: "okra",
@@ -517,5 +551,6 @@ export const crops: Crop[] = [
     states: "WB, Bihar, UP, Gujarat",
     fertilizer: "NPK 80:40:40, Compost",
     gradient: "from-lime-800 to-green-700",
+    image: "/assets/generated/crop-okra.dim_400x300.jpg",
   },
 ];

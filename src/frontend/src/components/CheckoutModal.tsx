@@ -8,6 +8,8 @@ const EMAILJS_SERVICE_ID = "service_mq76jtj";
 const EMAILJS_TEMPLATE_ID = "template_38wjfqt";
 const EMAILJS_PUBLIC_KEY = "ralKaweZUsirim3Pg";
 
+const HOST_EMAIL = "kharatchaitanya03@gmail.com";
+
 interface Props {
   open: boolean;
   onClose: () => void;
@@ -21,28 +23,34 @@ function buildProductTable(
     .map(
       (item, idx) =>
         `<tr style="background:${idx % 2 === 0 ? "#f9fff0" : "#ffffff"}">
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:center;">${idx + 1}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;font-weight:500;">${item.name}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:right;">\u20B9${item.price.toLocaleString("en-IN")}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:center;">${item.qty}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:right;font-weight:600;color:#4a7c00;">\u20B9${(item.price * item.qty).toLocaleString("en-IN")}</td>
+      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:center;color:#2c2416;">${idx + 1}</td>
+      <td style="padding:8px 12px;border:1px solid #c6e47a;font-weight:500;color:#2c2416;">${item.name}</td>
+      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:right;color:#2c2416;">&#8377;${item.price.toLocaleString("en-IN")}</td>
+      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:center;color:#2c2416;">${item.qty}</td>
+      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:right;font-weight:600;color:#3a6b1e;">&#8377;${(item.price * item.qty).toLocaleString("en-IN")}</td>
     </tr>`,
     )
     .join("");
-  return `<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14px;">
-    <thead><tr style="background:#3a6b1e;color:#fff;">
-      <th style="padding:10px 12px;border:1px solid #2d5217;">#</th>
+
+  return `
+<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14px;">
+  <thead>
+    <tr style="background:#3a6b1e;color:#ffffff;">
+      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:center;">#</th>
       <th style="padding:10px 12px;border:1px solid #2d5217;text-align:left;">Product Name</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;">Unit Price</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;">Qty</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;">Subtotal</th>
-    </tr></thead>
-    <tbody>${rows}</tbody>
-    <tfoot><tr style="background:#edf3e8;font-weight:bold;">
-      <td colspan="4" style="padding:10px 12px;border:1px solid #b5c9a0;text-align:right;">Grand Total</td>
-      <td style="padding:10px 12px;border:1px solid #b5c9a0;text-align:right;font-size:16px;color:#3a6b1e;">\u20B9${total.toLocaleString("en-IN")}</td>
-    </tr></tfoot>
-  </table>`;
+      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:right;">Unit Price</th>
+      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:center;">Qty</th>
+      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:right;">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>${rows}</tbody>
+  <tfoot>
+    <tr style="background:#edf3e8;">
+      <td colspan="4" style="padding:10px 12px;border:1px solid #b5c9a0;text-align:right;font-weight:bold;color:#2c2416;">Grand Total</td>
+      <td style="padding:10px 12px;border:1px solid #b5c9a0;text-align:right;font-weight:bold;font-size:15px;color:#3a6b1e;">&#8377;${total.toLocaleString("en-IN")}</td>
+    </tr>
+  </tfoot>
+</table>`;
 }
 
 async function sendEmail(params: Record<string, string>): Promise<void> {
@@ -92,22 +100,57 @@ export default function CheckoutModal({ open, onClose }: Props) {
       return;
     }
     setStatus("loading");
+
     const quantity = items.reduce((s, i) => s + i.qty, 0);
     const productTable = buildProductTable(items, total);
+    const orderTime = new Date().toLocaleString("en-IN", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    });
+
+    // Plain-text fallback list for email clients that block HTML
     const productPlain = items
-      .map((i) => `${i.name} x${i.qty} = \u20B9${i.price * i.qty}`)
-      .join(" | ");
+      .map(
+        (i, idx) =>
+          `${idx + 1}. ${i.name} | Qty: ${i.qty} | Unit: \u20B9${i.price} | Total: \u20B9${i.price * i.qty}`,
+      )
+      .join("\n");
+
+    const sharedParams = {
+      // Customer details
+      user_name: form.name,
+      user_phone: form.phone,
+      user_address: form.address,
+      // Order details
+      product_name: productTable, // HTML table — use {{{product_name}}} in EmailJS template
+      product_list: productPlain, // Plain-text fallback
+      quantity: String(quantity),
+      total_price: `\u20B9${total.toLocaleString("en-IN")}`,
+      order_time: orderTime,
+    };
+
     try {
+      // 1. Confirmation email to the customer
       await sendEmail({
-        user_name: form.name,
-        user_phone: form.phone,
+        ...sharedParams,
         user_email: form.email,
-        user_address: form.address,
-        product_name: productTable,
-        product_list: productPlain,
-        quantity: String(quantity),
-        total_price: `\u20B9${total.toLocaleString("en-IN")}`,
+        to_name: form.name,
+        reply_to: HOST_EMAIL,
       });
+
+      // 2. Notification email to the host/owner with full order details
+      await sendEmail({
+        ...sharedParams,
+        user_email: HOST_EMAIL,
+        to_name: "Chaitanya Kharat",
+        reply_to: form.email,
+        // Extra customer fields for host email clarity
+        customer_name: form.name,
+        customer_phone: form.phone,
+        customer_email: form.email,
+        customer_address: form.address,
+      });
+
       setStatus("success");
       clearCart();
       setTimeout(onClose, 2500);
@@ -168,7 +211,7 @@ export default function CheckoutModal({ open, onClose }: Props) {
 
         {status === "success" ? (
           <div data-ocid="checkout.success_state" className="text-center py-8">
-            <div className="text-5xl mb-4">\uD83C\uDF89</div>
+            <div className="text-5xl mb-4">🎉</div>
             <p className="font-semibold text-lg" style={{ color: "#2c2416" }}>
               {t("checkout.success")}
             </p>
@@ -178,7 +221,7 @@ export default function CheckoutModal({ open, onClose }: Props) {
           </div>
         ) : (
           <div className="space-y-4">
-            {/* Order summary */}
+            {/* Order summary table */}
             <div
               className="rounded-xl p-3"
               style={{ background: "#f9f6f1", border: "1px solid #e2d8cc" }}
@@ -187,87 +230,116 @@ export default function CheckoutModal({ open, onClose }: Props) {
                 className="text-xs font-semibold mb-2"
                 style={{ color: "#3a6b1e" }}
               >
-                \uD83D\uDED2 Order Summary
+                🛒 Order Summary
               </p>
-              <table
-                className="w-full text-xs"
-                style={{ borderCollapse: "collapse" }}
-              >
-                <thead>
-                  <tr style={{ background: "#edf3e8" }}>
-                    {["#", "Product", "Price", "Qty", "Total"].map((h) => (
-                      <th
-                        key={h}
-                        className="py-1.5 px-2 text-left"
+              <div className="overflow-x-auto">
+                <table
+                  className="w-full text-xs"
+                  style={{ borderCollapse: "collapse" }}
+                >
+                  <thead>
+                    <tr style={{ background: "#3a6b1e" }}>
+                      {["#", "Product", "Price", "Qty", "Total"].map((h) => (
+                        <th
+                          key={h}
+                          className="py-2 px-2 text-left"
+                          style={{
+                            border: "1px solid #2d5217",
+                            color: "#ffffff",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {items.map((item, idx) => (
+                      <tr
+                        key={item.id}
                         style={{
-                          border: "1px solid #e2d8cc",
-                          color: "#3a6b1e",
+                          background: idx % 2 === 0 ? "#f9fff0" : "#ffffff",
                         }}
                       >
-                        {h}
-                      </th>
+                        <td
+                          className="py-1.5 px-2"
+                          style={{
+                            border: "1px solid #c6e47a",
+                            color: "#2c2416",
+                            textAlign: "center",
+                          }}
+                        >
+                          {idx + 1}
+                        </td>
+                        <td
+                          className="py-1.5 px-2 font-medium"
+                          style={{
+                            border: "1px solid #c6e47a",
+                            color: "#2c2416",
+                          }}
+                        >
+                          {item.name}
+                        </td>
+                        <td
+                          className="py-1.5 px-2"
+                          style={{
+                            border: "1px solid #c6e47a",
+                            color: "#2c2416",
+                            textAlign: "right",
+                          }}
+                        >
+                          ₹{item.price.toLocaleString("en-IN")}
+                        </td>
+                        <td
+                          className="py-1.5 px-2 text-center"
+                          style={{
+                            border: "1px solid #c6e47a",
+                            color: "#2c2416",
+                          }}
+                        >
+                          {item.qty}
+                        </td>
+                        <td
+                          className="py-1.5 px-2 text-right font-semibold"
+                          style={{
+                            border: "1px solid #c6e47a",
+                            color: "#3a6b1e",
+                          }}
+                        >
+                          ₹{(item.price * item.qty).toLocaleString("en-IN")}
+                        </td>
+                      </tr>
                     ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {items.map((item, idx) => (
-                    <tr key={item.id} style={{ color: "#2c2416" }}>
+                  </tbody>
+                  <tfoot>
+                    <tr style={{ background: "#edf3e8" }}>
                       <td
-                        className="py-1.5 px-2"
-                        style={{ border: "1px solid #e2d8cc" }}
-                      >
-                        {idx + 1}
-                      </td>
-                      <td
-                        className="py-1.5 px-2"
-                        style={{ border: "1px solid #e2d8cc" }}
-                      >
-                        {item.name}
-                      </td>
-                      <td
-                        className="py-1.5 px-2"
-                        style={{ border: "1px solid #e2d8cc" }}
-                      >
-                        \u20B9{item.price}
-                      </td>
-                      <td
-                        className="py-1.5 px-2 text-center"
-                        style={{ border: "1px solid #e2d8cc" }}
-                      >
-                        {item.qty}
-                      </td>
-                      <td
-                        className="py-1.5 px-2 text-right font-semibold"
+                        colSpan={4}
+                        className="py-2 px-2 text-right font-bold"
                         style={{
-                          border: "1px solid #e2d8cc",
+                          border: "1px solid #b5c9a0",
+                          color: "#2c2416",
+                        }}
+                      >
+                        Grand Total
+                      </td>
+                      <td
+                        className="py-2 px-2 text-right font-bold text-sm"
+                        style={{
+                          border: "1px solid #b5c9a0",
                           color: "#3a6b1e",
                         }}
                       >
-                        \u20B9{item.price * item.qty}
+                        ₹{total.toLocaleString("en-IN")}
                       </td>
                     </tr>
-                  ))}
-                </tbody>
-                <tfoot>
-                  <tr style={{ background: "#edf3e8" }}>
-                    <td
-                      colSpan={4}
-                      className="py-2 px-2 text-right font-bold"
-                      style={{ border: "1px solid #e2d8cc", color: "#6b6554" }}
-                    >
-                      Grand Total
-                    </td>
-                    <td
-                      className="py-2 px-2 text-right font-bold text-sm"
-                      style={{ border: "1px solid #e2d8cc", color: "#3a6b1e" }}
-                    >
-                      \u20B9{total}
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
+                  </tfoot>
+                </table>
+              </div>
             </div>
 
+            {/* Checkout form fields */}
             {fields.map(({ key, inputId, type }) => (
               <div key={key}>
                 <label
@@ -336,6 +408,11 @@ export default function CheckoutModal({ open, onClose }: Props) {
                 ? t("common.loading")
                 : t("checkout.submit")}
             </button>
+
+            {/* EmailJS template reminder */}
+            <p className="text-xs text-center" style={{ color: "#9e9485" }}>
+              Order details will be sent to your email after placing the order.
+            </p>
           </div>
         )}
       </div>

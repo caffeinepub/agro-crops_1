@@ -173,6 +173,7 @@ export const animals: Animal[] = [
     benefits:
       "High FCR. Multiple piglets per litter. Quick market weight in 6 months.",
     gradient: "from-pink-700 to-rose-600",
+    image: "/assets/generated/cattle-pig.dim_400x300.jpg",
   },
   {
     id: "fish-rohu",
@@ -186,6 +187,7 @@ export const animals: Animal[] = [
     benefits:
       "1-1.5kg in 12 months. High market demand. Polyculture compatible.",
     gradient: "from-blue-800 to-teal-700",
+    image: "/assets/generated/cattle-fish-rohu.dim_400x300.jpg",
   },
   {
     id: "fish-catla",
@@ -198,6 +200,7 @@ export const animals: Animal[] = [
       "Regular water quality monitoring. Avoid overcrowding. Disease watch.",
     benefits: "1.5-2kg in 12 months. Premium market price. Large size fish.",
     gradient: "from-cyan-800 to-blue-700",
+    image: "/assets/generated/cattle-fish-catla.dim_400x300.jpg",
   },
   {
     id: "fish-tilapia",
@@ -211,5 +214,6 @@ export const animals: Animal[] = [
     benefits:
       "500-600g in 6 months. Fast growing. Export quality. Drought resistant.",
     gradient: "from-blue-700 to-indigo-600",
+    image: "/assets/generated/cattle-fish-tilapia.dim_400x300.jpg",
   },
 ];

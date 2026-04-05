@@ -9,6 +9,7 @@ type Page =
   | "shop"
   | "cattle"
   | "equipment"
+  | "farmingTechniques"
   | "cropSuggestions"
   | "schemes"
   | "contact";
@@ -102,6 +103,7 @@ export default function Footer({ onNavigate }: Props) {
                 {(
                   [
                     "equipment",
+                    "farmingTechniques",
                     "cropSuggestions",
                     "schemes",
                     "contact",
@@ -115,7 +117,9 @@ export default function Footer({ onNavigate }: Props) {
                       className="text-sm capitalize"
                       style={{ color: "#c8b99a" }}
                     >
-                      {t(`nav.${p}` as Parameters<typeof t>[0])}
+                      {p === "farmingTechniques"
+                        ? t("nav.techniques")
+                        : t(`nav.${p}` as Parameters<typeof t>[0])}
                     </button>
                   </li>
                 ))}

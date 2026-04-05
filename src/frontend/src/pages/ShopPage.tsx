@@ -65,7 +65,8 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function ShopPage() {
   const { t } = useLang();
-  const { addToCart, wishlist, toggleWishlist } = useCart();
+  const { addToCart, wishlist, toggleWishlist, count, total, setIsOpen } =
+    useCart();
   const [activeTab, setActiveTab] = useState<Category>("vegetables");
 
   const filtered = products.filter((p) => p.category === activeTab);
@@ -254,6 +255,30 @@ export default function ShopPage() {
           </div>
         </div>
       </section>
+
+      {/* Floating View Cart Button — visible when cart has items */}
+      {count > 0 && (
+        <button
+          type="button"
+          data-ocid="shop.view_cart.button"
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 right-6 flex items-center gap-3 px-5 py-3 rounded-2xl font-semibold text-white shadow-xl transition-all hover:opacity-90 active:scale-95"
+          style={{
+            background: "#3a6b1e",
+            border: "2px solid #5a9a2e",
+            zIndex: 55,
+          }}
+        >
+          <ShoppingCart size={18} />
+          <span>View Cart ({count})</span>
+          <span
+            className="pl-3 font-bold"
+            style={{ borderLeft: "1px solid #5a9a2e" }}
+          >
+            ₹{total}
+          </span>
+        </button>
+      )}
     </main>
   );
 }

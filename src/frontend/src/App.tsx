@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import CropSuggestionsPage from "./pages/CropSuggestionsPage";
 import EquipmentPage from "./pages/EquipmentPage";
 import FarmPage from "./pages/FarmPage";
+import FarmingTechniquesPage from "./pages/FarmingTechniquesPage";
 import HomePage from "./pages/HomePage";
 import SchemesPage from "./pages/SchemesPage";
 import ShopPage from "./pages/ShopPage";
@@ -26,7 +27,8 @@ type Page =
   | "equipment"
   | "cropSuggestions"
   | "schemes"
-  | "contact";
+  | "contact"
+  | "farmingTechniques";
 
 export default function App() {
   const [loading, setLoading] = useState(
@@ -78,6 +80,8 @@ export default function App() {
         return <CattlePage />;
       case "equipment":
         return <EquipmentPage />;
+      case "farmingTechniques":
+        return <FarmingTechniquesPage />;
       case "cropSuggestions":
         return <CropSuggestionsPage />;
       case "schemes":

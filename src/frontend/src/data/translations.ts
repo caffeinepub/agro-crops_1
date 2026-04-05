@@ -8,6 +8,7 @@ export type TranslationKey =
   | "nav.cropSuggestions"
   | "nav.schemes"
   | "nav.contact"
+  | "nav.techniques"
   | "nav.logout"
   | "nav.cart"
   | "nav.language"
@@ -184,6 +185,7 @@ export const translations: Translations = {
     "nav.cropSuggestions": "📍 Crop Suggestions",
     "nav.schemes": "🏛️ Schemes",
     "nav.contact": "📞 Contact",
+    "nav.techniques": "🌱 Techniques",
     "nav.logout": "Logout",
     "nav.cart": "Cart",
     "nav.language": "Language",
@@ -365,6 +367,7 @@ export const translations: Translations = {
     "nav.cropSuggestions": "📍 फसल सुझाव",
     "nav.schemes": "🏛️ योजनाएं",
     "nav.contact": "📞 संपर्क",
+    "nav.techniques": "🌱 तकनीकें",
     "nav.logout": "लॉगआउट",
     "nav.cart": "कार्ट",
     "nav.language": "भाषा",
@@ -539,6 +542,7 @@ export const translations: Translations = {
     "nav.cropSuggestions": "📍 पीक सूचना",
     "nav.schemes": "🏛️ योजना",
     "nav.contact": "📞 संपर्क",
+    "nav.techniques": "🌱 तंत्रे",
     "nav.logout": "लॉगआउट",
     "nav.cart": "कार्ट",
     "nav.language": "भाषा",

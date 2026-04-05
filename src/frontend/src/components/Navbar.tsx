@@ -12,7 +12,8 @@ type Page =
   | "equipment"
   | "cropSuggestions"
   | "schemes"
-  | "contact";
+  | "contact"
+  | "farmingTechniques";
 
 interface Props {
   currentPage: Page;
@@ -27,6 +28,7 @@ const navItems: { key: Page; labelKey: string }[] = [
   { key: "shop", labelKey: "nav.shop" },
   { key: "cattle", labelKey: "nav.cattle" },
   { key: "equipment", labelKey: "nav.equipment" },
+  { key: "farmingTechniques", labelKey: "nav.techniques" },
   { key: "cropSuggestions", labelKey: "nav.cropSuggestions" },
   { key: "schemes", labelKey: "nav.schemes" },
   { key: "contact", labelKey: "nav.contact" },

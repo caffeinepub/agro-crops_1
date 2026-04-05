@@ -279,7 +279,7 @@ export default function SchemesPage() {
                                 className="text-xs flex items-center gap-1"
                                 style={{ color: "#6b6554" }}
                               >
-                                <span style={{ color: "#3a6b1e" }}>\u2022</span>{" "}
+                                <span style={{ color: "#3a6b1e" }}>•</span>{" "}
                                 {doc}
                               </li>
                             ))}
@@ -368,7 +368,7 @@ export default function SchemesPage() {
                         className="text-sm font-medium flex items-center gap-1"
                         style={{ color: "#3a6b1e" }}
                       >
-                        \uD83D\uDCDE Call
+                        {"📞"} Call
                       </a>
                     </td>
                   </tr>

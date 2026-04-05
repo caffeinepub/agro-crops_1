@@ -34,7 +34,7 @@ export default function LoadingScreen({ onDone }: Props) {
           className="w-20 h-20 rounded-full flex items-center justify-center"
           style={{ background: "#edf3e8", border: "2px solid #b5c9a0" }}
         >
-          <span className="text-3xl">\uD83C\uDF3F</span>
+          <span className="text-3xl">🌿</span>
         </div>
       </div>
 

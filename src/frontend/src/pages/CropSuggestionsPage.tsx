@@ -195,7 +195,7 @@ export default function CropSuggestionsPage() {
             data-ocid="cropsuggestions.empty_state"
             className="text-center py-20"
           >
-            <div className="text-5xl mb-4">\uD83D\uDDFA\uFE0F</div>
+            <div className="text-5xl mb-4">{"🗺️"}</div>
             <p style={{ color: "#6b6554" }}>
               Select a state to see recommended crops
             </p>
@@ -242,7 +242,7 @@ export default function CropSuggestionsPage() {
                               color: waterStyle.color,
                             }}
                           >
-                            \uD83D\uDCA7 Water: {water}
+                            {"💧"} Water: {water}
                           </span>
                         </div>
                         <div className="grid grid-cols-2 gap-2 text-xs">

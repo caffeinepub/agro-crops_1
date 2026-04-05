@@ -503,7 +503,7 @@ export default function HomePage({ onNavigate }: Props) {
                       {t.role}
                     </p>
                     <p className="text-xs" style={{ color: "#6b6554" }}>
-                      \uD83D\uDCCD {t.location}
+                      {"📍"} {t.location}
                     </p>
                   </div>
                 </div>

@@ -198,7 +198,7 @@ export default function ContactPage() {
                       className="text-xs font-medium mt-1"
                       style={{ color: "#3a6b1e" }}
                     >
-                      \uD83D\uDEA8 Emergency Helpline: 24/7 available
+                      {"🚨"} Emergency Helpline: 24/7 available
                     </p>
                   </div>
                 </div>

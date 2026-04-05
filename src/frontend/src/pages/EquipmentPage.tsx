@@ -223,7 +223,7 @@ export default function EquipmentPage() {
                     className="text-xs mb-2 italic"
                     style={{ color: "#3a6b1e" }}
                   >
-                    \uD83D\uDD27 Tip:{" "}
+                    {"🔧"} Tip:{" "}
                     {
                       (eq as Equipment & { maintenanceTip?: string })
                         .maintenanceTip

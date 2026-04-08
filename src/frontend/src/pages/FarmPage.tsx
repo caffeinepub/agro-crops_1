@@ -688,7 +688,7 @@ export default function FarmPage() {
                   <span style={{ color: "#6b6554" }}>{method.pros}</span>
                 </p>
                 <p>
-                  <span style={{ color: "#dc2626" }}>&#x26A0; </span>
+                  <span style={{ color: "#dc2626" }}>⚠ </span>
                   <span style={{ color: "#6b6554" }}>{method.cons}</span>
                 </p>
               </div>

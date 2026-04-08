@@ -300,7 +300,7 @@ export default function EquipmentPage() {
                     className="text-xs mb-2 italic"
                     style={{ color: "#3a6b1e" }}
                   >
-                    &#128295; Tip: {eq.maintenanceTip}
+                    🔧 Tip: {eq.maintenanceTip}
                   </p>
                 )}
                 {/* New detailed fields */}
@@ -365,8 +365,7 @@ export default function EquipmentPage() {
                           className="text-xs flex items-center gap-1"
                           style={{ color: "#6b6554" }}
                         >
-                          <span style={{ color: "#dc2626" }}>&#9888;</span>{" "}
-                          {tip}
+                          <span style={{ color: "#dc2626" }}>⚠️</span> {tip}
                         </li>
                       ))}
                     </ul>
@@ -386,7 +385,7 @@ export default function EquipmentPage() {
                         className="text-xs flex items-center gap-1"
                         style={{ color: "#6b6554" }}
                       >
-                        <span style={{ color: "#3a6b1e" }}>&#8226;</span> {use}
+                        <span style={{ color: "#3a6b1e" }}>•</span> {use}
                       </li>
                     ))}
                   </ul>

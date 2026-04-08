@@ -39,7 +39,8 @@ export const animals: Animal[] = [
     benefits:
       "15-20L milk/day. A2 milk variety. High fat content. Heat tolerant.",
     gradient: "from-amber-800 to-yellow-700",
-    image: "/assets/generated/cattle-cow.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=400&h=300&fit=crop",
     dailyFeedKg: 30,
     waterRequirementLiters: 60,
     gestationDays: 285,
@@ -95,7 +96,7 @@ export const animals: Animal[] = [
   },
   {
     id: "buffalo",
-    name: "Buffalo",
+    name: "Murrah Buffalo",
     category: "dairy",
     emoji: "🐃",
     breed: "Murrah, Surti, Nili-Ravi",
@@ -103,7 +104,8 @@ export const animals: Animal[] = [
     health: "FMD vaccination. Regular deworming. Wallow facility essential.",
     benefits: "10-15L milk/day. High fat (7-8%). Good for ghee production.",
     gradient: "from-slate-800 to-gray-700",
-    image: "/assets/generated/cattle-buffalo.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&h=300&fit=crop",
     dailyFeedKg: 38,
     waterRequirementLiters: 80,
     gestationDays: 310,
@@ -123,7 +125,8 @@ export const animals: Animal[] = [
     health: "PPR vaccination. Deworming quarterly. Foot bath monthly.",
     benefits: "1.5-2L milk/day. Meat production. Hardy breed, low maintenance.",
     gradient: "from-stone-700 to-amber-600",
-    image: "/assets/generated/cattle-goat.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=400&h=300&fit=crop",
     dailyFeedKg: 2.5,
     waterRequirementLiters: 5,
     gestationDays: 148,
@@ -164,7 +167,8 @@ export const animals: Animal[] = [
     health: "PPR vaccination. Shear annually. Check for foot rot.",
     benefits: "Fine wool 3-5kg/year. Meat production. Hardy on hilly terrain.",
     gradient: "from-gray-600 to-slate-500",
-    image: "/assets/generated/cattle-sheep.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?w=400&h=300&fit=crop",
     dailyFeedKg: 2,
     waterRequirementLiters: 3,
     gestationDays: 150,
@@ -207,7 +211,8 @@ export const animals: Animal[] = [
     benefits:
       "2 kg meat in 42 days. Very high feed conversion. Commercial viability.",
     gradient: "from-yellow-600 to-orange-500",
-    image: "/assets/generated/cattle-poultry.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=400&h=300&fit=crop",
     dailyFeedKg: 0.15,
     waterRequirementLiters: 0.4,
     gestationDays: 21,
@@ -228,7 +233,7 @@ export const animals: Animal[] = [
     benefits: "280-300 eggs/year. Long production period. Commercial income.",
     gradient: "from-amber-700 to-red-600",
     image:
-      "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1596005554384-d293674c91d7?w=400&h=300&fit=crop",
     dailyFeedKg: 0.12,
     waterRequirementLiters: 0.25,
     gestationDays: 21,
@@ -237,6 +242,28 @@ export const animals: Animal[] = [
     manureKgPerDay: 0.08,
     subsidyAvailable: "National Livestock Mission, bank poultry loans",
     lifespan: "72–80 weeks (production)",
+  },
+  {
+    id: "duck",
+    name: "Duck",
+    category: "poultry",
+    emoji: "🦆",
+    breed: "Khaki Campbell, Indian Runner",
+    feed: "Grain-based feed 150-200g/day, water access essential",
+    health: "Duck Plague vaccination. Clean water pond. Avoid damp bedding.",
+    benefits:
+      "280-300 eggs/year. Meat production. Excellent insect pest control in rice fields.",
+    gradient: "from-teal-700 to-cyan-600",
+    image:
+      "https://images.unsplash.com/photo-1459478309853-2c33a60058e7?w=400&h=300&fit=crop",
+    dailyFeedKg: 0.18,
+    waterRequirementLiters: 1,
+    gestationDays: 28,
+    milkYieldLitersPerDay: "N/A",
+    marketValueRange: "₹200–₹400/bird",
+    manureKgPerDay: 0.12,
+    subsidyAvailable: "National Livestock Mission, NABARD loan",
+    lifespan: "5–8 years",
   },
   {
     id: "pig",
@@ -250,7 +277,8 @@ export const animals: Animal[] = [
     benefits:
       "Rapid weight gain. 80-100 kg in 6 months. High meat yield. Manure rich.",
     gradient: "from-pink-600 to-rose-500",
-    image: "/assets/generated/cattle-pig.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
     dailyFeedKg: 3,
     waterRequirementLiters: 12,
     gestationDays: 114,
@@ -282,6 +310,51 @@ export const animals: Animal[] = [
     lifespan: "15–20 years",
   },
   {
+    id: "rabbit",
+    name: "Rabbit",
+    category: "poultry",
+    emoji: "🐇",
+    breed: "New Zealand White, Soviet Chinchilla",
+    feed: "Green fodder 200-250g + pellets 80-100g daily",
+    health: "Myxomatosis vaccination. Keep cool (< 32°C). Clean hutch daily.",
+    benefits:
+      "Meat in 90 days. Angora wool variety. High protein meat. Low space needed.",
+    gradient: "from-gray-500 to-slate-400",
+    image:
+      "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=400&h=300&fit=crop",
+    dailyFeedKg: 0.3,
+    waterRequirementLiters: 0.5,
+    gestationDays: 30,
+    milkYieldLitersPerDay: "N/A",
+    marketValueRange: "₹500–₹1,500/rabbit",
+    manureKgPerDay: 0.2,
+    subsidyAvailable: "National Livestock Mission, NABARD loan",
+    lifespan: "5–8 years",
+  },
+  {
+    id: "horse",
+    name: "Horse",
+    category: "draught",
+    emoji: "🐴",
+    breed: "Marwari, Kathiawari, Spiti",
+    feed: "Hay 8-10kg, grain/concentrate 3-5kg, clean water 30-40L daily",
+    health:
+      "Tetanus, Influenza vaccinations annually. Regular hoof trimming. Deworming every 3 months.",
+    benefits:
+      "Transport, equestrian sports, farm work. Marwari breed highly valued culturally.",
+    gradient: "from-amber-900 to-brown-700",
+    image:
+      "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=400&h=300&fit=crop",
+    dailyFeedKg: 12,
+    waterRequirementLiters: 40,
+    gestationDays: 340,
+    milkYieldLitersPerDay: "N/A",
+    marketValueRange: "₹50,000–₹5,00,000",
+    manureKgPerDay: 15,
+    subsidyAvailable: "National Livestock Mission, state equine development",
+    lifespan: "25–30 years",
+  },
+  {
     id: "fish-rohu",
     name: "Rohu Fish",
     category: "aquaculture",
@@ -293,7 +366,8 @@ export const animals: Animal[] = [
     benefits:
       "Fast growing. 1-2 kg in 6 months. High market demand. Pond culture.",
     gradient: "from-blue-700 to-cyan-600",
-    image: "/assets/generated/cattle-fish-rohu.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop",
     dailyFeedKg: 0.05,
     waterRequirementLiters: 100000,
     gestationDays: 0,
@@ -315,7 +389,8 @@ export const animals: Animal[] = [
     benefits:
       "Surface feeder; grows up to 20 kg. High food conversion. Polyculture fish.",
     gradient: "from-cyan-700 to-teal-600",
-    image: "/assets/generated/cattle-fish-catla.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1497206365907-f5e630693df0?w=400&h=300&fit=crop",
     dailyFeedKg: 0.04,
     waterRequirementLiters: 100000,
     gestationDays: 0,
@@ -337,7 +412,8 @@ export const animals: Animal[] = [
     benefits:
       "Fast growth — 500g in 5 months. Disease tolerant. Excellent for backyard farming.",
     gradient: "from-teal-700 to-emerald-600",
-    image: "/assets/generated/cattle-fish-tilapia.dim_400x300.jpg",
+    image:
+      "https://images.unsplash.com/photo-1574781563462-c6b0484c2ec8?w=400&h=300&fit=crop",
     dailyFeedKg: 0.03,
     waterRequirementLiters: 80000,
     gestationDays: 0,
@@ -348,25 +424,26 @@ export const animals: Animal[] = [
     lifespan: "5–7 years",
   },
   {
-    id: "rabbit",
-    name: "Rabbit",
+    id: "turkey",
+    name: "Turkey",
     category: "poultry",
-    emoji: "🐇",
-    breed: "New Zealand White, Soviet Chinchilla",
-    feed: "Green fodder 200-250g + pellets 80-100g daily",
-    health: "Myxomatosis vaccination. Keep cool (< 32°C). Clean hutch daily.",
+    emoji: "🦃",
+    breed: "Broad Breasted White, Bronze Turkey",
+    feed: "Turkey starter mash, grain, green fodder, insects",
+    health:
+      "Blackhead disease prevention. Newcastle vaccination. Keep dry and ventilated.",
     benefits:
-      "Meat in 90 days. Angora wool variety. High protein meat. Low space needed.",
-    gradient: "from-gray-500 to-slate-400",
+      "Large meat bird. 8-14 kg in 5-6 months. High value festive market.",
+    gradient: "from-amber-800 to-brown-700",
     image:
-      "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=400&h=300&fit=crop",
-    dailyFeedKg: 0.3,
-    waterRequirementLiters: 0.5,
-    gestationDays: 30,
+      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&fit=crop",
+    dailyFeedKg: 0.5,
+    waterRequirementLiters: 1.5,
+    gestationDays: 28,
     milkYieldLitersPerDay: "N/A",
-    marketValueRange: "₹500–₹1,500/rabbit",
-    manureKgPerDay: 0.2,
-    subsidyAvailable: "National Livestock Mission, NABARD loan",
-    lifespan: "5–8 years",
+    marketValueRange: "₹600–₹1,200/bird",
+    manureKgPerDay: 0.3,
+    subsidyAvailable: "National Livestock Mission, NABARD poultry loan",
+    lifespan: "5–7 years (commercial 5-6 months)",
   },
 ];

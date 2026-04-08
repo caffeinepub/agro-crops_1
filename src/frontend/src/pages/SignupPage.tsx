@@ -162,7 +162,7 @@ export default function SignupPage({ onSignup }: Props) {
 
           {otpVerified && (
             <p className="text-sm" style={{ color: "#3a6b1e" }}>
-              &#10003; OTP Verified
+              ✓ OTP Verified
             </p>
           )}
 

@@ -8,63 +8,65 @@ const EMAILJS_SERVICE_ID = "service_mq76jtj";
 const EMAILJS_TEMPLATE_ID = "template_atkockn";
 const EMAILJS_PUBLIC_KEY = "ralKaweZUsirim3Pg";
 
-const HOST_EMAIL = "kharatchaitanya03@gmail.com";
-
 interface Props {
   open: boolean;
   onClose: () => void;
 }
 
-function buildProductTable(
-  items: { name: string; price: number; qty: number }[],
+async function sendOrderEmail(params: Record<string, string>): Promise<void> {
+  const body = {
+    service_id: EMAILJS_SERVICE_ID,
+    template_id: EMAILJS_TEMPLATE_ID,
+    user_id: EMAILJS_PUBLIC_KEY,
+    accessToken: EMAILJS_PUBLIC_KEY,
+    template_params: params,
+  };
+
+  const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    const err = new Error(`EmailJS error ${res.status}: ${text}`);
+    console.error("[CheckoutModal] Email send failed:", err.message, { body });
+    throw err;
+  }
+}
+
+function buildOrderHTML(
+  items: Array<{ name: string; price: number; qty: number }>,
   total: number,
 ): string {
   const rows = items
     .map(
-      (item, idx) =>
-        `<tr style="background:${idx % 2 === 0 ? "#f9fff0" : "#ffffff"}">
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:center;color:#2c2416;">${idx + 1}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;font-weight:500;color:#2c2416;">${item.name}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:right;color:#2c2416;">&#8377;${item.price.toLocaleString("en-IN")}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:center;color:#2c2416;">${item.qty}</td>
-      <td style="padding:8px 12px;border:1px solid #c6e47a;text-align:right;font-weight:600;color:#3a6b1e;">&#8377;${(item.price * item.qty).toLocaleString("en-IN")}</td>
+      (item) => `
+    <tr style="background:#f9f9f9;">
+      <td style="padding:8px;border:1px solid #ddd;">${item.name}</td>
+      <td style="padding:8px;border:1px solid #ddd;">&#8377;${item.price}</td>
+      <td style="padding:8px;border:1px solid #ddd;">${item.qty}</td>
+      <td style="padding:8px;border:1px solid #ddd;">&#8377;${item.price * item.qty}</td>
     </tr>`,
     )
     .join("");
 
-  return `
-<table style="border-collapse:collapse;width:100%;font-family:Arial,sans-serif;font-size:14px;">
-  <thead>
-    <tr style="background:#3a6b1e;color:#ffffff;">
-      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:center;">#</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:left;">Product Name</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:right;">Unit Price</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:center;">Qty</th>
-      <th style="padding:10px 12px;border:1px solid #2d5217;text-align:right;">Subtotal</th>
-    </tr>
-  </thead>
-  <tbody>${rows}</tbody>
-  <tfoot>
-    <tr style="background:#edf3e8;">
-      <td colspan="4" style="padding:10px 12px;border:1px solid #b5c9a0;text-align:right;font-weight:bold;color:#2c2416;">Grand Total</td>
-      <td style="padding:10px 12px;border:1px solid #b5c9a0;text-align:right;font-weight:bold;font-size:15px;color:#3a6b1e;">&#8377;${total.toLocaleString("en-IN")}</td>
-    </tr>
-  </tfoot>
+  return `<table style="border-collapse:collapse;width:100%;font-family:Arial;">
+  <tr style="background:#2e7d32;color:white;">
+    <th style="padding:10px;border:1px solid #ddd;">Product</th>
+    <th style="padding:10px;border:1px solid #ddd;">Price</th>
+    <th style="padding:10px;border:1px solid #ddd;">Qty</th>
+    <th style="padding:10px;border:1px solid #ddd;">Total</th>
+  </tr>
+  ${rows}
+  <tr style="background:#e8f5e9;">
+    <td colspan="3" style="padding:10px;border:1px solid #ddd;font-weight:bold;">Grand Total</td>
+    <td style="padding:10px;border:1px solid #ddd;font-weight:bold;color:#2e7d32;">&#8377;${total}</td>
+  </tr>
 </table>`;
-}
-
-async function sendEmail(params: Record<string, string>): Promise<void> {
-  const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      service_id: EMAILJS_SERVICE_ID,
-      template_id: EMAILJS_TEMPLATE_ID,
-      user_id: EMAILJS_PUBLIC_KEY,
-      template_params: params,
-    }),
-  });
-  if (!res.ok) throw new Error(`EmailJS error: ${res.status}`);
 }
 
 export default function CheckoutModal({ open, onClose }: Props) {
@@ -80,6 +82,7 @@ export default function CheckoutModal({ open, onClose }: Props) {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   if (!open) return null;
 
@@ -99,50 +102,32 @@ export default function CheckoutModal({ open, onClose }: Props) {
       setErrors(errs);
       return;
     }
+    setErrors({});
     setStatus("loading");
+    setErrorMsg("");
 
-    const quantity = items.reduce((s, i) => s + i.qty, 0);
-    const productTable = buildProductTable(items, total);
-    const orderTime = new Date().toLocaleString("en-IN", {
-      dateStyle: "medium",
-      timeStyle: "short",
-    });
+    const orderHTML = buildOrderHTML(items, total);
 
-    // Plain-text fallback list for email clients that block HTML
-    const productPlain = items
-      .map(
-        (i, idx) =>
-          `${idx + 1}. ${i.name} | Qty: ${i.qty} | Unit: ₹${i.price} | Total: ₹${i.price * i.qty}`,
-      )
-      .join("\n");
-
-    const sharedParams = {
-      // Customer details
+    const params: Record<string, string> = {
       user_name: form.name,
+      user_email: form.email,
       user_phone: form.phone,
       user_address: form.address,
-      // Order details
-      product_name: productTable, // HTML table — use {{{product_name}}} in EmailJS template
-      product_list: productPlain, // Plain-text fallback
-      quantity: String(quantity),
+      order_html: orderHTML,
       total_price: `₹${total.toLocaleString("en-IN")}`,
-      order_time: orderTime,
     };
 
     try {
-      // Send one confirmation email to the customer
-      await sendEmail({
-        ...sharedParams,
-        user_email: form.email,
-        to_name: form.name,
-        reply_to: HOST_EMAIL,
-      });
-
+      await sendOrderEmail(params);
       setStatus("success");
       clearCart();
       setTimeout(onClose, 2500);
-    } catch {
+    } catch (err) {
+      console.error("[CheckoutModal] Order placement failed:", err);
       setStatus("error");
+      setErrorMsg(
+        "Could not send order confirmation. Please check your internet connection and try again.",
+      );
     }
   };
 
@@ -374,13 +359,25 @@ export default function CheckoutModal({ open, onClose }: Props) {
             ))}
 
             {status === "error" && (
-              <p
+              <div
                 data-ocid="checkout.error_state"
-                className="text-sm"
-                style={{ color: "#dc2626" }}
+                className="rounded-lg p-3"
+                style={{
+                  background: "#fff5f5",
+                  border: "1px solid #fca5a5",
+                }}
               >
-                {t("checkout.error")}
-              </p>
+                <p className="text-sm font-medium" style={{ color: "#dc2626" }}>
+                  ⚠️ Order could not be placed
+                </p>
+                <p className="text-xs mt-1" style={{ color: "#991b1b" }}>
+                  {errorMsg || t("checkout.error")}
+                </p>
+                <p className="text-xs mt-1" style={{ color: "#6b7280" }}>
+                  Please check your internet connection and try again. If the
+                  problem persists, contact us at kharatchaitanya03@gmail.com
+                </p>
+              </div>
             )}
 
             <button
@@ -396,9 +393,9 @@ export default function CheckoutModal({ open, onClose }: Props) {
                 : t("checkout.submit")}
             </button>
 
-            {/* EmailJS template reminder */}
             <p className="text-xs text-center" style={{ color: "#9e9485" }}>
-              Order details will be sent to your email after placing the order.
+              Order confirmation will be sent to your email after placing the
+              order.
             </p>
           </div>
         )}

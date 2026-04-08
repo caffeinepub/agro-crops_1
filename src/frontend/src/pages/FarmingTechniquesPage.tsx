@@ -403,8 +403,7 @@ export default function FarmingTechniquesPage() {
       <div
         className="w-full py-12 px-4 text-center"
         style={{
-          background:
-            "linear-gradient(135deg, #2d5016 0%, #3a6b1e 60%, #4a8c27 100%)",
+          background: "#3a6b1e",
         }}
       >
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -632,7 +631,7 @@ export default function FarmingTechniquesPage() {
         <div
           className="mt-10 rounded-2xl p-6 text-center"
           style={{
-            background: "linear-gradient(135deg, #edf3e8, #d4edda)",
+            background: "#edf3e8",
             border: "1px solid #b5c9a0",
           }}
         >
@@ -809,7 +808,7 @@ export default function FarmingTechniquesPage() {
             className="font-bold text-xl mb-3"
             style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
           >
-            &#128218; Farmer Success Stories
+            📚 Farmer Success Stories
           </h3>
           <p className="mb-6 text-sm" style={{ color: "#6b6554" }}>
             Real farmers who transformed their income using these techniques
@@ -878,7 +877,7 @@ export default function FarmingTechniquesPage() {
                       {story.farmer}
                     </h4>
                     <p className="text-xs" style={{ color: "#6b6554" }}>
-                      &#128205; {story.location}
+                      📍 {story.location}
                     </p>
                     <p
                       className="text-xs font-medium"
@@ -896,13 +895,13 @@ export default function FarmingTechniquesPage() {
                     className="px-2 py-0.5 rounded-full text-xs font-medium"
                     style={{ background: "#dcfce7", color: "#15803d" }}
                   >
-                    &#128200; {story.income}
+                    📈 {story.income}
                   </span>
                   <span
                     className="px-2 py-0.5 rounded-full text-xs"
                     style={{ background: "#f0ebe3", color: "#6b6554" }}
                   >
-                    &#128336; {story.years}
+                    🕐 {story.years}
                   </span>
                 </div>
               </div>

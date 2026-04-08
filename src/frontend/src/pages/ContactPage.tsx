@@ -198,7 +198,7 @@ export default function ContactPage() {
                       className="text-xs font-medium mt-1"
                       style={{ color: "#3a6b1e" }}
                     >
-                      {"🚨"} Emergency Helpline: 24/7 available
+                      🚨 Emergency Helpline: 24/7 available
                     </p>
                   </div>
                 </div>
@@ -414,7 +414,7 @@ export default function ContactPage() {
                     className="font-semibold text-sm"
                     style={{ color: "#2c2416" }}
                   >
-                    &#10067; {faq.q}
+                    ❓ {faq.q}
                   </h3>
                   <span
                     className="flex-shrink-0 mt-0.5"
@@ -498,14 +498,14 @@ export default function ContactPage() {
                 {office.region} Office
               </h3>
               <div className="space-y-1.5 text-xs">
-                <p style={{ color: "#6b6554" }}>&#128205; {office.address}</p>
+                <p style={{ color: "#6b6554" }}>📍 {office.address}</p>
                 <p>
                   <a
                     href={`tel:${office.phone}`}
                     className="font-medium"
                     style={{ color: "#3a6b1e" }}
                   >
-                    &#128222; {office.phone}
+                    📞 {office.phone}
                   </a>
                 </p>
                 <p>
@@ -513,10 +513,10 @@ export default function ContactPage() {
                     href={`mailto:${office.email}`}
                     style={{ color: "#6b6554" }}
                   >
-                    &#9993;&#65039; {office.email}
+                    ✉️ {office.email}
                   </a>
                 </p>
-                <p style={{ color: "#6b6554" }}>&#128336; {office.timing}</p>
+                <p style={{ color: "#6b6554" }}>🕐 {office.timing}</p>
               </div>
             </div>
           ))}
@@ -746,7 +746,7 @@ export default function ContactPage() {
             className="font-bold text-2xl md:text-3xl mb-3"
             style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
           >
-            &#127775; Stay Updated with Agro Crops
+            🌐 Stay Updated with Agro Crops
           </h2>
           <p className="mb-6 text-sm" style={{ color: "#6b6554" }}>
             Get weekly farming tips, market price updates, and government scheme
@@ -776,7 +776,7 @@ export default function ContactPage() {
               </button>
             </div>
             <p className="text-xs mt-3" style={{ color: "#6b6554" }}>
-              &#128274; No spam. Unsubscribe anytime. Free forever.
+              🔒 No spam. Unsubscribe anytime. Free forever.
             </p>
           </div>
         </div>

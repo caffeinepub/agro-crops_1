@@ -850,7 +850,7 @@ export default function HomePage({ onNavigate }: Props) {
                       {tval.role}
                     </p>
                     <p className="text-xs" style={{ color: "#6b6554" }}>
-                      &#128205; {tval.location}
+                      📍 {tval.location}
                     </p>
                   </div>
                 </div>
@@ -858,7 +858,7 @@ export default function HomePage({ onNavigate }: Props) {
                   className="text-sm italic leading-relaxed"
                   style={{ color: "#6b6554" }}
                 >
-                  &#8220;{tval.quote}&#8221;
+                  "{tval.quote}"
                 </p>
                 <div className="mt-3 flex">
                   {[1, 2, 3, 4, 5].map((s) => (
@@ -867,7 +867,7 @@ export default function HomePage({ onNavigate }: Props) {
                       className="text-sm"
                       style={{ color: "#a36b0a" }}
                     >
-                      &#9733;
+                      ★
                     </span>
                   ))}
                 </div>

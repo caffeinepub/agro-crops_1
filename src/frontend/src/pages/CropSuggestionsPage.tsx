@@ -5,19 +5,19 @@ import { cropSuggestionsData } from "../data/cropSuggestions";
 const howItWorks = [
   {
     step: "1",
-    emoji: "\uD83D\uDCCD",
+    emoji: "📍",
     title: "Select Your State",
     desc: "Choose your state from the dropdown to get region-specific crop recommendations based on local climate and soil.",
   },
   {
     step: "2",
-    emoji: "\uD83C\uDF31",
+    emoji: "🌱",
     title: "View Crop Guide",
     desc: "See the best crops with season, yield, soil type, water requirements, and intercropping suggestions.",
   },
   {
     step: "3",
-    emoji: "\uD83D\uDCB0",
+    emoji: "💰",
     title: "Plan Your Income",
     desc: "Use the market price data to calculate expected income and find the most profitable crop for your land.",
   },
@@ -549,7 +549,7 @@ export default function CropSuggestionsPage() {
                 className="text-xs"
                 style={{ color: "#6b6554", lineHeight: "1.6" }}
               >
-                &#128161; {s.tips}
+                💡 {s.tips}
               </p>
             </div>
           ))}

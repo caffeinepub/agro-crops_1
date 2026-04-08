@@ -814,7 +814,7 @@ export default function CattlePage() {
                     className="text-xs font-medium"
                     style={{ color: "#3a6b1e" }}
                   >
-                    Learn More &#8599;
+                    Learn More ↗
                   </a>
                 </div>
               </div>

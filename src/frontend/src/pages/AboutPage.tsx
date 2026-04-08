@@ -339,7 +339,7 @@ export default function AboutPage() {
                 fontFamily: "Fraunces, Georgia, serif",
               }}
             >
-              &#127919; {t("about.mission")}
+              🎯 {t("about.mission")}
             </h3>
             <p style={{ color: "#6b6554", lineHeight: "1.8" }}>
               {t("about.mission.text")}
@@ -353,7 +353,7 @@ export default function AboutPage() {
                 fontFamily: "Fraunces, Georgia, serif",
               }}
             >
-              &#128065; {t("about.vision")}
+              👁️ {t("about.vision")}
             </h3>
             <p style={{ color: "#6b6554", lineHeight: "1.8" }}>
               {t("about.vision.text")}
@@ -652,7 +652,7 @@ export default function AboutPage() {
                 className="text-sm"
                 style={{ color: "#6b6554" }}
               >
-                &#128222; {member.phone}
+                📞 {member.phone}
               </a>
             </div>
           ))}

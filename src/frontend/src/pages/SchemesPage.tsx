@@ -657,7 +657,7 @@ export default function SchemesPage() {
           style={{ background: "#edf3e8", border: "1px solid #b5c9a0" }}
         >
           <h3 className="font-bold mb-2" style={{ color: "#2c2416" }}>
-            &#9889; Quick Grievance Steps
+            ⚡ Quick Grievance Steps
           </h3>
           <ol className="space-y-2">
             {[

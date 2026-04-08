@@ -23,22 +23,22 @@ const categoryBadge: Record<
 
 const whyBuyUs = [
   {
-    emoji: "\uD83C\uDF3F",
+    emoji: "🌿",
     title: "100% Organic Certified",
     desc: "All products carry NPOP/PGS-India organic certification. No synthetic chemicals, ever.",
   },
   {
-    emoji: "\uD83D\uDE9A",
+    emoji: "🚚",
     title: "Fast Delivery",
     desc: "Delivered within 3–5 working days across India. Real-time order tracking via email.",
   },
   {
-    emoji: "\uD83D\uDCAF",
+    emoji: "💯",
     title: "Quality Guarantee",
     desc: "30-day return policy if not satisfied with quality. No questions asked.",
   },
   {
-    emoji: "\uD83D\uDCB0",
+    emoji: "💰",
     title: "Best Price",
     desc: "Direct from farmers, no middlemen. Prices 20–40% lower than retail markets.",
   },
@@ -53,7 +53,7 @@ function StarRating({ rating }: { rating: number }) {
           className="text-xs"
           style={{ color: s <= Math.floor(rating) ? "#a36b0a" : "#d4c9b8" }}
         >
-          &#9733;
+          ★
         </span>
       ))}
       <span className="text-xs ml-1" style={{ color: "#6b6554" }}>

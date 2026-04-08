@@ -11,8 +11,5 @@
     "typecheck": "pnpm -r --if-present run typecheck",
     "check": "pnpm -r --if-present run check",
     "fix": "pnpm -r --if-present run fix"
-  },
-  "devDependencies": {
-    "sharp": "^0.34.4"
   }
 }

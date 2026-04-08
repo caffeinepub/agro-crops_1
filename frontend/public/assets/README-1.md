@@ -1,7 +1,1 @@
-## 
-
-This source code has been exported from [Caffeine](https://caffeine.ai/)
-
-### Coming Soon
-
-We are working on tools to help you build locally and deploy your apps back to caffeine.
+IyMgCgpUaGlzIHNvdXJjZSBjb2RlIGhhcyBiZWVuIGV4cG9ydGVkIGZyb20gW0NhZmZlaW5lXShodHRwczovL2NhZmZlaW5lLmFpLykKCiMjIyBDb21pbmcgU29vbgoKV2UgYXJlIHdvcmtpbmcgb24gdG9vbHMgdG8gaGVscCB5b3UgYnVpbGQgbG9jYWxseSBhbmQgZGVwbG95IHlvdXIgYXBwcyBiYWNrIHRvIGNhZmZlaW5lLgo=

@@ -378,6 +378,312 @@ export default function SchemesPage() {
           </div>
         </div>
       </section>
+
+      {/* Application Process Guide */}
+      <section
+        data-ocid="schemes.application_guide.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+      >
+        <h2
+          className="font-bold text-2xl md:text-3xl mb-3"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
+          How to Apply — Step by Step
+        </h2>
+        <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+          Follow this 6-step guide to successfully apply for any government
+          agriculture scheme
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            {
+              step: "1",
+              emoji: "🔍",
+              title: "Discover the Scheme",
+              desc: "Visit the scheme portal or your nearest Common Service Centre (CSC). Check eligibility criteria carefully before proceeding.",
+            },
+            {
+              step: "2",
+              emoji: "📋",
+              title: "Gather Documents",
+              desc: "Collect Aadhaar, bank passbook, land records (7/12 Utara), passport photo, and any crop-specific certificates.",
+            },
+            {
+              step: "3",
+              emoji: "📝",
+              title: "Fill Application Form",
+              desc: "Complete the application form online (portal) or offline (district agriculture office). Double-check all details.",
+            },
+            {
+              step: "4",
+              emoji: "📤",
+              title: "Submit & Get Receipt",
+              desc: "Submit form with documents. Keep the acknowledgment receipt with reference number for future follow-up.",
+            },
+            {
+              step: "5",
+              emoji: "⏳",
+              title: "Verification Process",
+              desc: "Field officer will verify your land and documents within 15-30 days. Be present for the site visit if required.",
+            },
+            {
+              step: "6",
+              emoji: "🏦",
+              title: "Receive Benefits",
+              desc: "Scheme benefit (cash/subsidy/goods) transferred directly to your linked bank account (DBT) within 45-90 days.",
+            },
+          ].map((step, i) => (
+            <div
+              key={step.step}
+              data-ocid={`schemes.process_step.item.${i + 1}`}
+              className="glass-card p-5"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
+                  style={{ background: "#3a6b1e" }}
+                >
+                  {step.step}
+                </div>
+                <span className="text-2xl">{step.emoji}</span>
+              </div>
+              <h3 className="font-bold mb-2" style={{ color: "#2c2416" }}>
+                {step.title}
+              </h3>
+              <p className="text-sm" style={{ color: "#6b6554" }}>
+                {step.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Documents Checklist */}
+      <section
+        data-ocid="schemes.documents.section"
+        className="py-12 px-4"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-3"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            Documents Checklist
+          </h2>
+          <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+            Commonly required documents across most government agriculture
+            schemes
+          </p>
+          <div className="glass-card overflow-x-auto">
+            <table className="w-full text-sm min-w-[600px]">
+              <thead>
+                <tr style={{ background: "#edf3e8" }}>
+                  {["Document", "Why Needed", "Where to Get", "Common For"].map(
+                    (h) => (
+                      <th
+                        key={h}
+                        className="py-3 px-4 text-left font-semibold"
+                        style={{ color: "#3a6b1e" }}
+                      >
+                        {h}
+                      </th>
+                    ),
+                  )}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    doc: "Aadhaar Card",
+                    why: "Identity proof & DBT linkage",
+                    where: "UIDAI / Aadhaar enrolment centre",
+                    forSchemes: "All schemes",
+                  },
+                  {
+                    doc: "Land Records (7/12 Utara)",
+                    why: "Proof of land ownership/cultivation",
+                    where: "Talathi office / Revenue department",
+                    forSchemes: "PM-KISAN, KCC, PMFBY, PMKSY",
+                  },
+                  {
+                    doc: "Bank Passbook (with IFSC)",
+                    why: "Direct bank transfer of benefits",
+                    where: "Your bank branch",
+                    forSchemes: "All cash transfer schemes",
+                  },
+                  {
+                    doc: "Sowing Certificate",
+                    why: "Proof of crop grown",
+                    where: "Village level worker (VLW) / Patwari",
+                    forSchemes: "PMFBY (crop insurance)",
+                  },
+                  {
+                    doc: "PAN Card",
+                    why: "Tax identity for loans",
+                    where: "NSDL / UTIITSL online",
+                    forSchemes: "KCC loan, large subsidies",
+                  },
+                  {
+                    doc: "Passport Photo (x2)",
+                    why: "Identity verification",
+                    where: "Nearby photo studio",
+                    forSchemes: "KCC, NABARD loans",
+                  },
+                  {
+                    doc: "Soil Health Card",
+                    why: "Organic scheme eligibility",
+                    where: "KVK or Agriculture Department",
+                    forSchemes: "PKVY, NMSA organic schemes",
+                  },
+                  {
+                    doc: "Caste Certificate",
+                    why: "SC/ST extra subsidy eligibility",
+                    where: "Tehsil / Revenue office",
+                    forSchemes: "SC/ST special subsidies",
+                  },
+                ].map((row, i) => (
+                  <tr
+                    key={row.doc}
+                    data-ocid={`schemes.document.row.${i + 1}`}
+                    style={{
+                      borderTop: "1px solid #e2d8cc",
+                      background: i % 2 === 0 ? "#ffffff" : "#faf7f2",
+                    }}
+                  >
+                    <td
+                      className="py-3 px-4 font-semibold"
+                      style={{ color: "#2c2416" }}
+                    >
+                      {row.doc}
+                    </td>
+                    <td
+                      className="py-3 px-4 text-xs"
+                      style={{ color: "#6b6554" }}
+                    >
+                      {row.why}
+                    </td>
+                    <td
+                      className="py-3 px-4 text-xs"
+                      style={{ color: "#6b6554" }}
+                    >
+                      {row.where}
+                    </td>
+                    <td className="py-3 px-4">
+                      <span
+                        className="text-xs px-2 py-0.5 rounded-full"
+                        style={{ background: "#edf3e8", color: "#3a6b1e" }}
+                      >
+                        {row.forSchemes}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Grievance Redressal */}
+      <section
+        data-ocid="schemes.grievance.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+      >
+        <h2
+          className="font-bold text-2xl md:text-3xl mb-3"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
+          Grievance Redressal
+        </h2>
+        <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+          If your scheme benefit is denied or delayed, here is how to raise a
+          complaint
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              emoji: "📞",
+              title: "PM Kisan Helpline",
+              info: "155261 / 1800-115-526",
+              desc: "For PM-KISAN related complaints — payment delays, incorrect data, or registration issues.",
+              color: "#1565c0",
+            },
+            {
+              emoji: "🌾",
+              title: "Kisan Call Centre",
+              info: "1800-180-1551",
+              desc: "Free 24x7 toll-free helpline for all agriculture queries including scheme information and complaints.",
+              color: "#2e7d32",
+            },
+            {
+              emoji: "🛡️",
+              title: "PMFBY Grievance",
+              info: "1800-200-7710",
+              desc: "For crop insurance claim rejections or delays. You can also write to PMFBY Grievance Cell, Ministry of Agriculture.",
+              color: "#6a1b9a",
+            },
+            {
+              emoji: "🏛️",
+              title: "CPGRAMS Portal",
+              info: "pgportal.gov.in",
+              desc: "File formal complaints about any central government scheme through the Centralized Public Grievance Redress System.",
+              color: "#b45309",
+            },
+          ].map((card, i) => (
+            <div
+              key={card.title}
+              data-ocid={`schemes.grievance.item.${i + 1}`}
+              className="glass-card p-5"
+            >
+              <div className="text-3xl mb-3">{card.emoji}</div>
+              <h3 className="font-bold mb-1" style={{ color: "#2c2416" }}>
+                {card.title}
+              </h3>
+              <p
+                className="font-semibold text-base mb-2"
+                style={{ color: card.color }}
+              >
+                {card.info}
+              </p>
+              <p className="text-sm" style={{ color: "#6b6554" }}>
+                {card.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div
+          className="mt-8 glass-card p-5"
+          style={{ background: "#edf3e8", border: "1px solid #b5c9a0" }}
+        >
+          <h3 className="font-bold mb-2" style={{ color: "#2c2416" }}>
+            &#9889; Quick Grievance Steps
+          </h3>
+          <ol className="space-y-2">
+            {[
+              "First contact your Talathi / Patwari / Village Level Worker (VLW) for local resolution",
+              "If unresolved in 7 days, escalate to Block Development Officer (BDO) or Tehsildar",
+              "If still unresolved, call the scheme helpline number with your application reference number",
+              "For formal complaints, file on CPGRAMS portal (pgportal.gov.in) — response within 30 days",
+              "Right to Information (RTI) can be filed for scheme status information if complaint is unanswered",
+            ].map((step, si) => (
+              <li
+                key={step}
+                className="text-sm flex items-start gap-2"
+                style={{ color: "#6b6554" }}
+              >
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                  style={{ background: "#3a6b1e", color: "#ffffff" }}
+                >
+                  {si + 1}
+                </span>
+                {step}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
     </main>
   );
 }

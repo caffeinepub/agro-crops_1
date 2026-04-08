@@ -289,6 +289,333 @@ export default function CropSuggestionsPage() {
           </div>
         )}
       </section>
+
+      {/* Intercropping Compatibility Chart */}
+      <section
+        data-ocid="cropsuggestions.intercrop.section"
+        className="py-12 px-4"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-3"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            Intercropping Compatibility Chart
+          </h2>
+          <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+            Grow compatible crops together to maximize yield and income per acre
+          </p>
+          <div className="glass-card overflow-x-auto">
+            <table className="w-full text-xs min-w-[700px]">
+              <thead>
+                <tr style={{ background: "#edf3e8" }}>
+                  {[
+                    "Main Crop",
+                    "Best Intercrop",
+                    "Benefit",
+                    "Season",
+                    "Spacing",
+                  ].map((h) => (
+                    <th
+                      key={h}
+                      className="py-3 px-4 text-left font-semibold"
+                      style={{ color: "#3a6b1e" }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    main: "Maize",
+                    inter: "Cowpea / Soybean",
+                    benefit: "N-fixation + ground cover",
+                    season: "Kharif",
+                    spacing: "Cowpea in inter-rows",
+                  },
+                  {
+                    main: "Sugarcane",
+                    inter: "Onion / Garlic",
+                    benefit: "Extra income in early months",
+                    season: "Year-round",
+                    spacing: "Onion between rows",
+                  },
+                  {
+                    main: "Cotton",
+                    inter: "Moong / Cowpea",
+                    benefit: "Nitrogen fixation, soil cover",
+                    season: "Kharif",
+                    spacing: "Pulse in every 3rd row",
+                  },
+                  {
+                    main: "Tomato",
+                    inter: "Marigold / Basil",
+                    benefit: "Pest deterrent, biodiversity",
+                    season: "Rabi",
+                    spacing: "Border planting",
+                  },
+                  {
+                    main: "Groundnut",
+                    inter: "Castor",
+                    benefit: "Wind break, pest trap crop",
+                    season: "Kharif",
+                    spacing: "1 castor row per 5 groundnut",
+                  },
+                  {
+                    main: "Wheat",
+                    inter: "Mustard",
+                    benefit: "Pest management, extra income",
+                    season: "Rabi",
+                    spacing: "Alternate row sowing",
+                  },
+                  {
+                    main: "Turmeric",
+                    inter: "Ginger",
+                    benefit: "Same climate, doubles income",
+                    season: "Kharif",
+                    spacing: "Alternate rows",
+                  },
+                  {
+                    main: "Mango Orchard",
+                    inter: "Turmeric / Ginger",
+                    benefit: "Shade-tolerant intercrop",
+                    season: "Year-round",
+                    spacing: "Under tree canopy",
+                  },
+                ].map((row, i) => (
+                  <tr
+                    key={row.main}
+                    data-ocid={`cropsuggestions.intercrop.row.${i + 1}`}
+                    style={{
+                      borderTop: "1px solid #e2d8cc",
+                      background: i % 2 === 0 ? "#ffffff" : "#faf7f2",
+                    }}
+                  >
+                    <td
+                      className="py-3 px-4 font-semibold"
+                      style={{ color: "#2c2416" }}
+                    >
+                      {row.main}
+                    </td>
+                    <td
+                      className="py-3 px-4"
+                      style={{ color: "#3a6b1e", fontWeight: 500 }}
+                    >
+                      {row.inter}
+                    </td>
+                    <td className="py-3 px-4" style={{ color: "#6b6554" }}>
+                      {row.benefit}
+                    </td>
+                    <td className="py-3 px-4">
+                      <span
+                        className="px-2 py-0.5 rounded-full text-xs"
+                        style={{ background: "#edf3e8", color: "#3a6b1e" }}
+                      >
+                        {row.season}
+                      </span>
+                    </td>
+                    <td className="py-3 px-4" style={{ color: "#6b6554" }}>
+                      {row.spacing}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Season-wise Crop Calendar */}
+      <section
+        data-ocid="cropsuggestions.season_calendar.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+      >
+        <h2
+          className="font-bold text-2xl md:text-3xl mb-3"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
+          Season-wise Crop Calendar
+        </h2>
+        <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+          Plan your farming year across India&apos;s three major cropping
+          seasons
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {[
+            {
+              season: "Kharif Season",
+              period: "June – October",
+              emoji: "🌧️",
+              color: "#2e7d32",
+              bg: "#dcfce7",
+              crops: [
+                "Rice",
+                "Cotton",
+                "Soybean",
+                "Maize",
+                "Bajra",
+                "Sugarcane",
+                "Tur Dal",
+                "Groundnut",
+                "Sesame",
+                "Turmeric",
+              ],
+              tips: "Sow after first monsoon shower. Ensure field bunding for water retention. Apply basal dose of fertilizer at sowing.",
+            },
+            {
+              season: "Rabi Season",
+              period: "November – March",
+              emoji: "❄️",
+              color: "#1565c0",
+              bg: "#dbeafe",
+              crops: [
+                "Wheat",
+                "Mustard",
+                "Gram (Chickpea)",
+                "Lentil",
+                "Potato",
+                "Onion",
+                "Barley",
+                "Peas",
+                "Sunflower",
+                "Safflower",
+              ],
+              tips: "Irrigation is critical — most areas lack winter rain. Apply zinc sulfate if wheat shows deficiency. Protect from frost in Dec-Jan.",
+            },
+            {
+              season: "Zaid Season",
+              period: "April – June",
+              emoji: "☀️",
+              color: "#e65100",
+              bg: "#fed7aa",
+              crops: [
+                "Watermelon",
+                "Muskmelon",
+                "Cucumber",
+                "Pumpkin",
+                "Moong Dal",
+                "Summer Groundnut",
+                "Sunflower",
+                "Short-duration Maize",
+              ],
+              tips: "Short-duration, heat-tolerant crops only. Daily irrigation essential. Use shade nets for delicate crops. Harvest before peak summer.",
+            },
+          ].map((s, i) => (
+            <div
+              key={s.season}
+              data-ocid={`cropsuggestions.season.item.${i + 1}`}
+              className="glass-card p-5"
+            >
+              <div className="rounded-xl p-3 mb-4" style={{ background: s.bg }}>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-2xl">{s.emoji}</span>
+                  <h3
+                    className="font-bold text-lg"
+                    style={{
+                      color: s.color,
+                      fontFamily: "Fraunces, Georgia, serif",
+                    }}
+                  >
+                    {s.season}
+                  </h3>
+                </div>
+                <p className="text-xs font-medium" style={{ color: s.color }}>
+                  {s.period}
+                </p>
+              </div>
+              <div className="mb-3">
+                <p
+                  className="text-xs font-semibold mb-2"
+                  style={{ color: "#2c2416" }}
+                >
+                  Key Crops:
+                </p>
+                <div className="flex flex-wrap gap-1">
+                  {s.crops.map((crop) => (
+                    <span
+                      key={crop}
+                      className="px-2 py-0.5 rounded-full text-xs"
+                      style={{ background: "#f0ebe3", color: "#6b6554" }}
+                    >
+                      {crop}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p
+                className="text-xs"
+                style={{ color: "#6b6554", lineHeight: "1.6" }}
+              >
+                &#128161; {s.tips}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Organic Certification Tips */}
+      <section
+        data-ocid="cropsuggestions.organic_cert.section"
+        className="py-12 px-4"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-3"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            Organic Certification Guide
+          </h2>
+          <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+            Certified organic produce commands 30-50% premium prices. Here is
+            how to get certified.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                emoji: "🌿",
+                title: "Why Get Certified?",
+                desc: "Organic certified produce gets 30-50% higher prices in export and urban markets. NPOP and PGS-India are the two main certifications available to Indian farmers.",
+              },
+              {
+                emoji: "⏳",
+                title: "Conversion Period",
+                desc: "Land must be chemical-free for 3 years before NPOP certification. PGS-India requires only 1 year chemical-free period — ideal for small farmers.",
+              },
+              {
+                emoji: "📋",
+                title: "Documentation Required",
+                desc: "Maintain a farm diary recording all inputs used (seeds, fertilizers, pesticides). Keep bills for organic inputs. This record is reviewed during certification audit.",
+              },
+              {
+                emoji: "🏆",
+                title: "Where to Apply",
+                desc: "For NPOP: Contact accredited certification bodies listed at APEDA website. For PGS-India: Join a local group and apply via NCOF portal at pgsindia-ncof.gov.in.",
+              },
+            ].map((card, i) => (
+              <div
+                key={card.title}
+                data-ocid={`cropsuggestions.organic_cert.item.${i + 1}`}
+                className="glass-card p-5"
+              >
+                <div className="text-3xl mb-3">{card.emoji}</div>
+                <h3 className="font-bold mb-2" style={{ color: "#2c2416" }}>
+                  {card.title}
+                </h3>
+                <p
+                  className="text-sm"
+                  style={{ color: "#6b6554", lineHeight: "1.7" }}
+                >
+                  {card.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

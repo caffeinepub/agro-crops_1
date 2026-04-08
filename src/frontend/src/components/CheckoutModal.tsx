@@ -5,7 +5,7 @@ import { useCart } from "../contexts/CartContext";
 import { useLang } from "../contexts/LangContext";
 
 const EMAILJS_SERVICE_ID = "service_mq76jtj";
-const EMAILJS_TEMPLATE_ID = "template_38wjfqt";
+const EMAILJS_TEMPLATE_ID = "template_atkockn";
 const EMAILJS_PUBLIC_KEY = "ralKaweZUsirim3Pg";
 
 const HOST_EMAIL = "kharatchaitanya03@gmail.com";
@@ -130,25 +130,12 @@ export default function CheckoutModal({ open, onClose }: Props) {
     };
 
     try {
-      // 1. Confirmation email to the customer
+      // Send one confirmation email to the customer
       await sendEmail({
         ...sharedParams,
         user_email: form.email,
         to_name: form.name,
         reply_to: HOST_EMAIL,
-      });
-
-      // 2. Notification email to the host/owner with full order details
-      await sendEmail({
-        ...sharedParams,
-        user_email: HOST_EMAIL,
-        to_name: "Chaitanya Kharat",
-        reply_to: form.email,
-        // Extra customer fields for host email clarity
-        customer_name: form.name,
-        customer_phone: form.phone,
-        customer_email: form.email,
-        customer_address: form.address,
       });
 
       setStatus("success");

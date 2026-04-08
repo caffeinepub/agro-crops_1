@@ -1,0 +1,26 @@
+// Version: 1.0.0
+type Contact__891480783 = {email : Text; message : Text; name : Text};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Registration__525232183 = {mobile : Text; name : Text};
+type User__831686142 = {id : Text; password : Text};
+actor {
+  stable contacts :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Contact__891480783]];
+      var elementIndex : Nat__490723111
+    };
+  stable registrations :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Registration__525232183]];
+      var elementIndex : Nat__490723111
+    };
+  stable users :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?User__831686142]];
+      var elementIndex : Nat__490723111
+    }
+};

@@ -1,13 +1,1 @@
-# Specification
-
-## Summary
-**Goal:** Add multi-language support (English, Hindi, Marathi) with a language switcher to the Agro Crops frontend.
-
-**Planned changes:**
-- Create `LanguageContext.tsx` with a `useLanguage` hook exposing `{ language, setLanguage, t }`, persisting the selected language to localStorage
-- Create `translations.ts` with translation strings in English, Hindi (Devanagari), and Marathi (Devanagari) covering navigation labels, section titles, button labels, form field labels, and status messages
-- Create a `LanguageSwitcher` component (EN / हि / म) and integrate it into the Header on desktop and mobile
-- Wrap the root `App` with `LanguageProvider`
-- Replace hardcoded English strings with `t(key)` calls across all major pages (Home, About, Techniques, Farm, Shop, Cattle, Equipment, Contact, GovernmentSchemes, Signup, OtpVerification) and shared components (Header, Footer)
-
-**User-visible outcome:** Users can switch between English, Hindi, and Marathi using a language switcher in the header; all major UI text updates instantly without a page reload, and the language choice is remembered across sessions.
+IyBTcGVjaWZpY2F0aW9uCgojIyBTdW1tYXJ5CioqR29hbDoqKiBBZGQgbXVsdGktbGFuZ3VhZ2Ugc3VwcG9ydCAoRW5nbGlzaCwgSGluZGksIE1hcmF0aGkpIHdpdGggYSBsYW5ndWFnZSBzd2l0Y2hlciB0byB0aGUgQWdybyBDcm9wcyBmcm9udGVuZC4KCioqUGxhbm5lZCBjaGFuZ2VzOioqCi0gQ3JlYXRlIGBMYW5ndWFnZUNvbnRleHQudHN4YCB3aXRoIGEgYHVzZUxhbmd1YWdlYCBob29rIGV4cG9zaW5nIGB7IGxhbmd1YWdlLCBzZXRMYW5ndWFnZSwgdCB9YCwgcGVyc2lzdGluZyB0aGUgc2VsZWN0ZWQgbGFuZ3VhZ2UgdG8gbG9jYWxTdG9yYWdlCi0gQ3JlYXRlIGB0cmFuc2xhdGlvbnMudHNgIHdpdGggdHJhbnNsYXRpb24gc3RyaW5ncyBpbiBFbmdsaXNoLCBIaW5kaSAoRGV2YW5hZ2FyaSksIGFuZCBNYXJhdGhpIChEZXZhbmFnYXJpKSBjb3ZlcmluZyBuYXZpZ2F0aW9uIGxhYmVscywgc2VjdGlvbiB0aXRsZXMsIGJ1dHRvbiBsYWJlbHMsIGZvcm0gZmllbGQgbGFiZWxzLCBhbmQgc3RhdHVzIG1lc3NhZ2VzCi0gQ3JlYXRlIGEgYExhbmd1YWdlU3dpdGNoZXJgIGNvbXBvbmVudCAoRU4gLyDgpLngpL8gLyDgpK4pIGFuZCBpbnRlZ3JhdGUgaXQgaW50byB0aGUgSGVhZGVyIG9uIGRlc2t0b3AgYW5kIG1vYmlsZQotIFdyYXAgdGhlIHJvb3QgYEFwcGAgd2l0aCBgTGFuZ3VhZ2VQcm92aWRlcmAKLSBSZXBsYWNlIGhhcmRjb2RlZCBFbmdsaXNoIHN0cmluZ3Mgd2l0aCBgdChrZXkpYCBjYWxscyBhY3Jvc3MgYWxsIG1ham9yIHBhZ2VzIChIb21lLCBBYm91dCwgVGVjaG5pcXVlcywgRmFybSwgU2hvcCwgQ2F0dGxlLCBFcXVpcG1lbnQsIENvbnRhY3QsIEdvdmVybm1lbnRTY2hlbWVzLCBTaWdudXAsIE90cFZlcmlmaWNhdGlvbikgYW5kIHNoYXJlZCBjb21wb25lbnRzIChIZWFkZXIsIEZvb3RlcikKCioqVXNlci12aXNpYmxlIG91dGNvbWU6KiogVXNlcnMgY2FuIHN3aXRjaCBiZXR3ZWVuIEVuZ2xpc2gsIEhpbmRpLCBhbmQgTWFyYXRoaSB1c2luZyBhIGxhbmd1YWdlIHN3aXRjaGVyIGluIHRoZSBoZWFkZXI7IGFsbCBtYWpvciBVSSB0ZXh0IHVwZGF0ZXMgaW5zdGFudGx5IHdpdGhvdXQgYSBwYWdlIHJlbG9hZCwgYW5kIHRoZSBsYW5ndWFnZSBjaG9pY2UgaXMgcmVtZW1iZXJlZCBhY3Jvc3Mgc2Vzc2lvbnMuCg==

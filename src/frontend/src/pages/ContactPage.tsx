@@ -438,6 +438,349 @@ export default function ContactPage() {
           </div>
         </section>
       </section>
+
+      {/* Regional Offices */}
+      <section
+        data-ocid="contact.regional_offices.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+      >
+        <h2
+          className="font-bold text-2xl md:text-3xl mb-3"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
+          Regional Office Addresses
+        </h2>
+        <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+          Visit us at our regional offices for in-person consultations
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              region: "Maharashtra",
+              emoji: "🏙️",
+              address: "Agro Crops Office, Near KVK Campus, Pune – 411001",
+              phone: "8421016006",
+              email: "pune@agro-crops.in",
+              timing: "Mon–Sat, 9am–6pm",
+            },
+            {
+              region: "Punjab",
+              emoji: "🌾",
+              address: "Agro Crops, Agricultural Complex, Ludhiana – 141001",
+              phone: "9423653174",
+              email: "punjab@agro-crops.in",
+              timing: "Mon–Sat, 9am–6pm",
+            },
+            {
+              region: "Tamil Nadu",
+              emoji: "🌴",
+              address: "Agro Crops, Farmer House, Coimbatore – 641001",
+              phone: "7219872347",
+              email: "tn@agro-crops.in",
+              timing: "Mon–Sat, 9am–6pm",
+            },
+            {
+              region: "Uttar Pradesh",
+              emoji: "🌻",
+              address: "Agro Crops, Krishi Bhavan, Lucknow – 226001",
+              phone: "8378093053",
+              email: "up@agro-crops.in",
+              timing: "Mon–Sat, 9am–6pm",
+            },
+          ].map((office, i) => (
+            <div
+              key={office.region}
+              data-ocid={`contact.office.item.${i + 1}`}
+              className="glass-card p-5"
+            >
+              <div className="text-3xl mb-2">{office.emoji}</div>
+              <h3 className="font-bold mb-2" style={{ color: "#2c2416" }}>
+                {office.region} Office
+              </h3>
+              <div className="space-y-1.5 text-xs">
+                <p style={{ color: "#6b6554" }}>&#128205; {office.address}</p>
+                <p>
+                  <a
+                    href={`tel:${office.phone}`}
+                    className="font-medium"
+                    style={{ color: "#3a6b1e" }}
+                  >
+                    &#128222; {office.phone}
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href={`mailto:${office.email}`}
+                    style={{ color: "#6b6554" }}
+                  >
+                    &#9993;&#65039; {office.email}
+                  </a>
+                </p>
+                <p style={{ color: "#6b6554" }}>&#128336; {office.timing}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Field Officer Directory */}
+      <section
+        data-ocid="contact.officers.section"
+        className="py-12 px-4"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-3"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            Field Officer Directory
+          </h2>
+          <p className="mb-6 text-sm" style={{ color: "#6b6554" }}>
+            Contact our field officers for region-specific guidance
+          </p>
+          <div className="glass-card overflow-x-auto">
+            <table className="w-full text-sm min-w-[700px]">
+              <thead>
+                <tr style={{ background: "#edf3e8" }}>
+                  {[
+                    "Officer Name",
+                    "Region",
+                    "Phone",
+                    "Specialization",
+                    "Availability",
+                  ].map((h) => (
+                    <th
+                      key={h}
+                      className="py-3 px-4 text-left font-semibold"
+                      style={{ color: "#3a6b1e" }}
+                    >
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    name: "Rajesh Kulkarni",
+                    region: "Vidarbha, Maharashtra",
+                    phone: "9423653174",
+                    spec: "Cotton & Soybean farming",
+                    avail: "Mon–Fri",
+                  },
+                  {
+                    name: "Gurpreet Singh",
+                    region: "Punjab & Haryana",
+                    phone: "7219872347",
+                    spec: "Wheat & Paddy cultivation",
+                    avail: "Mon–Sat",
+                  },
+                  {
+                    name: "Lakshmi Rajan",
+                    region: "Tamil Nadu & Kerala",
+                    phone: "8378093053",
+                    spec: "Spices & Coconut farming",
+                    avail: "Mon–Fri",
+                  },
+                  {
+                    name: "Arun Sharma",
+                    region: "UP & Bihar",
+                    phone: "8421016006",
+                    spec: "Sugarcane & Pulses",
+                    avail: "Mon–Sat",
+                  },
+                  {
+                    name: "Priya Patil",
+                    region: "Marathwada, Maharashtra",
+                    phone: "9423653174",
+                    spec: "Organic certification & Grapes",
+                    avail: "Mon–Fri",
+                  },
+                  {
+                    name: "Suresh Yadav",
+                    region: "Rajasthan & Gujarat",
+                    phone: "7219872347",
+                    spec: "Dryland farming & Millets",
+                    avail: "Mon–Sat",
+                  },
+                ].map((officer, i) => (
+                  <tr
+                    key={officer.name}
+                    data-ocid={`contact.officer.row.${i + 1}`}
+                    style={{
+                      borderTop: "1px solid #e2d8cc",
+                      background: i % 2 === 0 ? "#ffffff" : "#faf7f2",
+                    }}
+                  >
+                    <td
+                      className="py-3 px-4 font-medium"
+                      style={{ color: "#2c2416" }}
+                    >
+                      {officer.name}
+                    </td>
+                    <td
+                      className="py-3 px-4 text-xs"
+                      style={{ color: "#6b6554" }}
+                    >
+                      {officer.region}
+                    </td>
+                    <td className="py-3 px-4">
+                      <a
+                        href={`tel:${officer.phone}`}
+                        className="text-sm font-medium"
+                        style={{ color: "#3a6b1e" }}
+                      >
+                        {officer.phone}
+                      </a>
+                    </td>
+                    <td
+                      className="py-3 px-4 text-xs"
+                      style={{ color: "#6b6554" }}
+                    >
+                      {officer.spec}
+                    </td>
+                    <td className="py-3 px-4">
+                      <span
+                        className="px-2 py-0.5 rounded-full text-xs"
+                        style={{ background: "#edf3e8", color: "#3a6b1e" }}
+                      >
+                        {officer.avail}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Helplines */}
+      <section
+        data-ocid="contact.emergency.section"
+        className="py-12 px-4 max-w-7xl mx-auto"
+      >
+        <h2
+          className="font-bold text-2xl md:text-3xl mb-3"
+          style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+        >
+          Emergency &amp; Farmer Helplines
+        </h2>
+        <p className="mb-8 text-sm" style={{ color: "#6b6554" }}>
+          Free government helplines available 24x7 for all farmers
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            {
+              emoji: "📞",
+              title: "Kisan Call Centre",
+              number: "1800-180-1551",
+              color: "#2e7d32",
+              bg: "#dcfce7",
+              desc: "24x7 toll-free helpline for agriculture queries in 22 languages",
+            },
+            {
+              emoji: "🌾",
+              title: "PM Kisan Helpline",
+              number: "155261",
+              color: "#1565c0",
+              bg: "#dbeafe",
+              desc: "For PM-KISAN payment issues, registration, and updates",
+            },
+            {
+              emoji: "🌿",
+              title: "Soil Health Card",
+              number: "1800-180-1551",
+              color: "#d97706",
+              bg: "#fef9c3",
+              desc: "For soil testing appointments and Soil Health Card queries",
+            },
+            {
+              emoji: "🛡️",
+              title: "Crop Insurance",
+              number: "1800-200-7710",
+              color: "#6a1b9a",
+              bg: "#f3e8ff",
+              desc: "For PMFBY crop insurance claims, complaints, and assistance",
+            },
+          ].map((helpline, i) => (
+            <div
+              key={helpline.title}
+              data-ocid={`contact.helpline.item.${i + 1}`}
+              className="glass-card p-5 text-center"
+              style={{ borderTop: `3px solid ${helpline.color}` }}
+            >
+              <div
+                className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-3"
+                style={{ background: helpline.bg }}
+              >
+                {helpline.emoji}
+              </div>
+              <h3 className="font-bold mb-1" style={{ color: "#2c2416" }}>
+                {helpline.title}
+              </h3>
+              <a
+                href={`tel:${helpline.number}`}
+                className="text-xl font-bold block mb-2"
+                style={{ color: helpline.color }}
+              >
+                {helpline.number}
+              </a>
+              <p className="text-xs" style={{ color: "#6b6554" }}>
+                {helpline.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section
+        data-ocid="contact.newsletter.section"
+        className="py-12 px-4"
+        style={{ background: "#f5f0e8" }}
+      >
+        <div className="max-w-xl mx-auto text-center">
+          <h2
+            className="font-bold text-2xl md:text-3xl mb-3"
+            style={{ color: "#2c2416", fontFamily: "Fraunces, Georgia, serif" }}
+          >
+            &#127775; Stay Updated with Agro Crops
+          </h2>
+          <p className="mb-6 text-sm" style={{ color: "#6b6554" }}>
+            Get weekly farming tips, market price updates, and government scheme
+            alerts in your inbox
+          </p>
+          <div className="glass-card p-6">
+            <div className="flex gap-3">
+              <input
+                data-ocid="contact.newsletter.input"
+                type="email"
+                placeholder="Enter your email address"
+                className="flex-1 px-4 py-2.5 rounded-xl text-sm outline-none"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e2d8cc",
+                  color: "#2c2416",
+                }}
+              />
+              <button
+                type="button"
+                data-ocid="contact.newsletter.submit_button"
+                className="px-6 py-2.5 rounded-xl text-sm font-semibold text-white flex-shrink-0"
+                style={{ background: "#3a6b1e" }}
+                onClick={() => {}}
+              >
+                Subscribe
+              </button>
+            </div>
+            <p className="text-xs mt-3" style={{ color: "#6b6554" }}>
+              &#128274; No spam. Unsubscribe anytime. Free forever.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

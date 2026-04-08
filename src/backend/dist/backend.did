@@ -1,0 +1,6 @@
+service : {
+  createUser: (id: text, password: text) -> ();
+  login: (id: text, password: text) -> ();
+  register: (name: text, mobile: text) -> ();
+  submitContact: (name: text, email: text, message: text) -> ();
+}
